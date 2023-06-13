@@ -1,6 +1,4 @@
-
-
-//Object to hold information related to an episode
+//Data Object to hold information related to an episode
 class Episode{
     series = "";                //String name of series
     seriesLink = "";            //String http link to series
@@ -25,6 +23,9 @@ Working variables
 
 var favorites = new Array();
 var episodes = [new Array(), new Array(), new Array(), new Array()];
+var keyFavorites = "favorites";
+var listItem;
+var itemName;
 
 // when i click a button
 // it adds an item to a separate 'favorites' list
@@ -55,8 +56,6 @@ var episodes = [new Array(), new Array(), new Array(), new Array()];
 // the same code as above but with a function to make calling it easier if needed
 // this code also has a remove button with it
 
-var listItem; // declared variable in global scope
-var itemName; // declared variable in global scope
 
 function meLikey() {
   // gives the function the favList element
@@ -104,7 +103,8 @@ function clearFavorite(){
 
 }
 function addFavorite(name){
-
+    favorites.push(name);
+    localStorage.setItem(keyFavorites, JSON.stringify(favorites));
 }
 function removeFavorite(key){
 
@@ -124,7 +124,7 @@ function displayList(){
 //Calls a function to add an episode and add it to the HTML Dom for that day
 /*
 --Section defined in HTML code
-<section class="day" id="day[selectedDay]">
+<section class="day" id="day-{day}">
     --Call displayDay(day, key) to get Dom Element.
     <article class="episode"></article>
     <article class="episode"></article>
@@ -147,8 +147,15 @@ function displayDay(day){
         <h2>"Ep." + episodes[day][key].number + " " + episodes[day][key].title</h2>
         <img src=episodes[day][key].preview />
     </a>
+    <button>Favorite</button>
+    create
+    <button>.addEventListener('click', function(event){
+        addFavorite(episodes[day][key].series);
+    });
 </article>
 */
 function displayEpisode(day, key){
+    let articleEl = document.createElement("article");
+    articleEl.className = "episode";
 
 }
