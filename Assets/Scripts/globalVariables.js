@@ -13,4 +13,8 @@ class Episode{
     constructor(){
 
     }
+    //Generate Summary from fetch
+    getSummary(){
+
+    }
 }
