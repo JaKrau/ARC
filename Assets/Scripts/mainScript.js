@@ -150,5 +150,14 @@ function displayDay(day){
 </article>
 */
 function displayEpisode(day, key){
-
+  let articleEl = document.createElement("article");
+  articleEl.className = "episode";
+  let aElement1 = document.createElement("a");
+  aElement1.setAttribute("href=episodes[day][key].seriesLink");
+  aElement1.innerHTML("<h3>episodes[day][key].series</h3>");
+  let aElement2 = document.createElement("a");
+  aElement2.setAttribute("href=episodes[day][key].link");
+  aElement2.innerHTML("<h2\"Ep.\" + episodes[day][key].number + \" \" + episodes[day][key].title</h2>", "<img src=episodes[day][key].preview />");
+  articleEl.appendChild(aElement1);
+  articleEl.appendChild(aElement2);
 }
