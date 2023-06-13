@@ -5,34 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Release Calendar</title>
-
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="./Assets/Styles/style.css"/>
 </head>
 
 <body>
-  <div class="event container">
-       <h3 class="day">Monday</h3>
+    <header>
+        <h1 id="title"></h1>
+    </header>
+    <aside id="favoritesBar">
+        <h2>Favorites</h2>
+            <!--- Java Script Enters Code Here-->
+    </aside>
+    <main id="episodeList">
+        <h2>Previous Days</h2>
+        <section class="day" id="day-0"></section>
+            <!--- Java Script Enters Code Here-->
+        <section class="day" id="day-1"></section>
+            <!--- Java Script Enters Code Here-->
+        <section class="day" id="day-2"></section>
+            <!--- Java Script Enters Code Here-->
+        <section class="day" id="day-3"></section>
+            <!--- Java Script Enters Code Here-->
+    </main>
 
-       <div class="event">
-            <div class="event-left">
-                <div class=" event-date">
-                    <div class="date">7</div>
-                    <div class=" day"></div>
-
-                </div>
-            
-            </div>
-
-            <div class=" event-right">
-
-            </div>
-       </div>
-  </div>
-    
-
-    
-    <script type="text/javascript" src="./Assets/Scripts/globalVariables"></script>
-    <script type="text/javascript" src="./Assets/Scripts/getCrunchyrollEpisodes"></script>
- 
+    <script type="text/javascript" src="./Assets/Scripts/mainScript.js"></script>
 </body>
 </html>
