@@ -64,5 +64,76 @@ class language{
         this.english = english;
         this.japanese = japanese;
     }
+}
 
+/* sample HTML
+Crunchyroll Episodes
+                <label for="crunchyEpNum{#}">Episode: </label>
+                    <input type="number" name="crunchyEpNum{#}"/>
+                <label for="crunchyEpTitle{#}">Title: </label>
+                    <input type="text" name="crunchyEpTitle{#}"/>
+                <label for="crunchyEpLnkEN{#}">Link(EN): </label>
+                    <input type="url" name="crunchyEpLnkEN{#}"/>
+                <label for="crunchyEpLnkJP{#}">Link(JP): </label>
+                    <input type="url" name="crunchyEpLnkJP{#}"/>
+                <label for="crunchyEpLnkImg{#}">Thumbnail Link: </label>
+                    <input type="url" name="crunchyEpLnkImg{#}"/>
+                <label for="crunchyEpAirEN{#}">Air date(EN): </label>
+                    <input type="date" name="crunchyEpAirEN{#}"/>
+                <label for="crunchyEpAirJP{#}">Air date(JP): </label>
+                    <input type="date" name="crunchyEpAirJP{#}"/>
+*/
+buildEpisodeForm(stream, index){
+    let episodeArea = document.createElement('div')
+    episodeArea.id = stream + "EP" + index;
+    let epLabel = document.createElement('label');
+    epLabel.for = stream + "Num" + index;
+    let epInput = document.createElement('input');
+    epInput.name = stream + "Num" + index;
+    epInput.type = "number";
+    episodeArea.appendChild();
+    episodeArea.appendChild();
+
+    let titleLabel = document.createElement('label');
+    titleLabel.for = stream + "Title" + index;
+    let titleInput = document.createElement('input');
+    titleInput.name = stream + "Title" + index;
+    titleInput.type = "text";
+    episodeArea.appendChild();
+    episodeArea.appendChild();
+
+    let lnkENLabel = document.createElement('label');
+    lnkENLabel.for = stream + "LnkEN" + index;
+    let lnkENInput = document.createElement('input');
+    lnkENInput.name = stream + "LnkEN" + index;
+    lnkENInput.type = "url";
+    episodeArea.appendChild();
+    episodeArea.appendChild();
+
+    let lnkJPLabel = document.createElement('label');
+    lnkJPLabel.for = stream + "LnkJP" + index;
+    let lnkJPInput = document.createElement('input');
+    lnkJPInput.name = stream + "LnkJP" + index;
+    lnkJPInput.type = "url";
+    episodeArea.appendChild();
+    episodeArea.appendChild();
+
+    let lnkImgLabel = document.createElement('label');
+    lnkImgLabel.for = stream + "LnkImg" + index;
+    let lnkImgInput = document.createElement('input');
+    lnkImgInput.name = stream + "LnkImg" + index;
+    lnkImgInput.type = "url";
+
+    let airENLabel = document.createElement('label');
+    airENLabel.for = stream + "AirEN" + index;
+    let airENInput = document.createElement('input');
+    airENInput.name = stream + "AirEN" + index;
+    airENInput.type = "date";
+
+    let airJPLabel = document.createElement('label');
+    airJPLabel.for = stream + "AirJP" + index;
+    let airJPInput = document.createElement('input');
+    airJPInput.name = stream + "AirJP" + index;
+    airJPInput.type = "date";
+    return episodeArea;
 }

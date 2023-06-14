@@ -7,8 +7,52 @@
 </head>
 <body>
     <!---Area for series information-->
-    <form>
-        <label><input type="text" />
+    Series Information
+    <form id="series">
+        <label for="mID">mID: </label>
+            <input type="number" name="mID"/>
+        <label for="seriesTitle">Title: </label>
+            <input type="text" name="seriesTitle"/>
+        <label for="seriesLink">Link: </label>
+            <input type="url" name="seriesLink"/>
+        <label for="seriesImageLink">Thumbnail Link: </label>
+            <input type="url" name="seriesImageLink"/>
+        <label for="currentSeason">Current Season: </label>
+            <input type="text" name="currentSeason"/>
+        <label for="broadcastDay">Broadcast Day: </label>
+            <input type="text" name="broadcastDay"/>
+        Streaming Services:
+        <label for="crunchyRoll">CrunchyRoll</label>
+            <input type="checkbox" name="crunchyRoll"/>
+        <label for="crunchyEp">Episodes</label>
+            <input type="range" name="crunchyEp" id="crunchyEp" min="0" max="6"/>
+            <!-- Sample Generate from JavaScript
+                Crunchyroll Episodes
+                <label for="crunchyEpNum{#}">Episode: </label>
+                    <input type="number" name="crunchyEpNum{#}"/>
+                <label for="crunchyEpTitle{#}">Title: </label>
+                    <input type="text" name="crunchyEpTitle{#}"/>
+                <label for="crunchyEpLnkEN{#}">Link(EN): </label>
+                    <input type="url" name="crunchyEpLnkEN{#}"/>
+                <label for="crunchyEpLnkJP{#}">Link(JP): </label>
+                    <input type="url" name="crunchyEpLnkJP{#}"/>
+                <label for="crunchyEpLnkImg{#}">Thumbnail Link: </label>
+                    <input type="url" name="crunchyEpLnkImg{#}"/>
+                <label for="crunchyEpAirEN{#}">Air date(EN): </label>
+                    <input type="date" name="crunchyEpAirEN{#}"/>
+                <label for="crunchyEpAirJP{#}">Air date(JP): </label>
+                    <input type="date" name="crunchyEpAirJP{#}"/>
+            -->
+        <label for="hiDive">HiDive</label>
+            <input type="checkbox" name="hiDive"/>
+        <label for="hiEp">Episodes</label>
+            <input type="range" name="hiEp" id="hiEp" min="0" max="6"/>
+        <label for="netflix">Netflix</label>
+            <input type="checkbox" name="netflix"/>
+        <label for="netflixEp">Episodes</label>
+            <input type="range" name="netflixEp" id="netflixEp" min="0" max="6"/>
+        <input type="submit"/>
+        <input type="reset"/>
     </form>
     <!---Area for episode information-->
     
