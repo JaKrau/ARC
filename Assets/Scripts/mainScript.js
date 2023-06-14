@@ -1,6 +1,7 @@
 //Data Object to hold information related to an episode
 class Episode{
     series = "";                //String name of series
+    id = 0;                     //Number ID of anime on myAnimeList
     seriesLink = "";            //String http link to series
     number = 0;                 //Number episode number
     title = "";                 //String title of episode
@@ -16,6 +17,8 @@ class Episode{
 
     }
 }
+//Already predetermine anime series to use based on research
+//Too many anime pulled to be under fetch limits
 
 /*
 Working variables
@@ -158,4 +161,18 @@ function displayEpisode(day, key){
     let articleEl = document.createElement("article");
     articleEl.className = "episode";
 
+}
+
+/*Functions to add and use episode data
+*/
+function addEpisode(){
+
+}
+function getSummary(id){
+    fetchCall("https://api.jikan.moe/v4/anime/" + id + "/full");
+}
+async function fetchCall(address){
+    let response = await fetch(address);
+    let data = await response.json();
+    return data;
 }
