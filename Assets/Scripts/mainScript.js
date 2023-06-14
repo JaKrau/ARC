@@ -58,9 +58,10 @@ var episodes = [new Array(), new Array(), new Array(), new Array()];
 var listItem; // declared variable in global scope
 var itemName; // declared variable in global scope
 
+
 function meLikey() {
   // gives the function the favList element
-  var favList = document.querySelector("#favoritesBar")
+  var favList = document.querySelector("#favList");
   var favItem = document.createElement('li');
   favItem.textContent = itemName;
 
@@ -70,6 +71,10 @@ function meLikey() {
 
   favItem.appendChild(removeBtn);
   favList.appendChild(favItem);
+
+// this sets the clear favorites list button to be visible but only after something is in the list
+  clearListButton.style.display = 'block'
+
 }
 
 // creates a click event listener on the itemList class, that adds the content to the favorite list
@@ -90,6 +95,23 @@ if (event.target.classList.contains("removeBtn")) {
   }
 });
 
+
+var clearListButton = document.getElementById("clearListButton");
+var buttonContainerEl = document.querySelector(".buttonContainer")
+buttonContainerEl.addEventListener("click", function() {
+  //var favList = document.getElementById("favList");
+  //console.log(favList);
+  clearFavorite();
+  //console.log(favList);
+/*
+  for (var i = favList.children.length - 1; i >= 0; i--) {
+    var listItem = favList.children[i];
+    listItem.remove();
+  }
+*/
+  clearListButton.style.display = 'none';
+});
+
 //---------------------------------------------------------------------------------//
 
 
@@ -101,7 +123,11 @@ function getFavorites(){
 
 }
 function clearFavorite(){
-
+  var favList = document.getElementById("favList")
+  /*while (favList.firstChild) {
+    favList.removeChild(favList.lastChild);
+  }*/
+  favList.textContent = "";
 }
 function addFavorite(name){
 
