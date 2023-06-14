@@ -60,7 +60,7 @@ var itemName; // declared variable in global scope
 
 function meLikey() {
   // gives the function the favList element
-  var favList = document.querySelector(".favList ul")
+  var favList = document.querySelector("#favoritesBar")
   var favItem = document.createElement('li');
   favItem.textContent = itemName;
 
@@ -73,7 +73,7 @@ function meLikey() {
 }
 
 // creates a click event listener on the itemList class, that adds the content to the favorite list
-document.querySelector('.itemList').addEventListener('click', function(event) {
+document.querySelector('#episodeList').addEventListener('click', function(event) {
   if (event.target.classList.contains("addButton")) {
       listItem = event.target.parentNode;
       itemName = listItem.firstChild.textContent.trim();
@@ -83,7 +83,7 @@ document.querySelector('.itemList').addEventListener('click', function(event) {
 
 
 // creates a click event listener on the ul of the favList class that removes the item from the list
-document.querySelector('.favList ul').addEventListener('click', function(event) {
+document.querySelector('#favoritesBar').addEventListener('click', function(event) {
 if (event.target.classList.contains("removeBtn")) {
     listItem = event.target.parentNode;
     listItem.remove();
