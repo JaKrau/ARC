@@ -100,9 +100,7 @@ var clearListButton = document.getElementById("clearListButton");
 var buttonContainerEl = document.querySelector(".buttonContainer")
 buttonContainerEl.addEventListener("click", function() {
   //var favList = document.getElementById("favList");
-  //console.log(favList);
   clearFavorite();
-  //console.log(favList);
 /*
   for (var i = favList.children.length - 1; i >= 0; i--) {
     var listItem = favList.children[i];
