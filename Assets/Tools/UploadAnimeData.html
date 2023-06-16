@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Anime Data</title>
+    <link rel="stylesheet" href="../Styles/upload.css"/>
 </head>
 <body>
     <!---Area for series information-->
@@ -22,40 +23,45 @@
         <label for="broadcastDay">Broadcast Day: </label>
             <input type="text" name="broadcastDay"/>
         Streaming Services:
-        <label for="crunchyRoll">CrunchyRoll</label>
-            <input type="checkbox" name="crunchyRoll"/>
-        <label for="crunchyEp">Episodes</label>
-            <input type="range" name="crunchyEp" id="crunchyEp" min="0" max="6"/>
-            <!-- Sample Generate from JavaScript
-                Crunchyroll Episodes
-                <label for="crunchyEpNum{#}">Episode: </label>
-                    <input type="number" name="crunchyEpNum{#}"/>
-                <label for="crunchyEpTitle{#}">Title: </label>
-                    <input type="text" name="crunchyEpTitle{#}"/>
-                <label for="crunchyEpLnkEN{#}">Link(EN): </label>
-                    <input type="url" name="crunchyEpLnkEN{#}"/>
-                <label for="crunchyEpLnkJP{#}">Link(JP): </label>
-                    <input type="url" name="crunchyEpLnkJP{#}"/>
-                <label for="crunchyEpLnkImg{#}">Thumbnail Link: </label>
-                    <input type="url" name="crunchyEpLnkImg{#}"/>
-                <label for="crunchyEpAirEN{#}">Air date(EN): </label>
-                    <input type="date" name="crunchyEpAirEN{#}"/>
-                <label for="crunchyEpAirJP{#}">Air date(JP): </label>
-                    <input type="date" name="crunchyEpAirJP{#}"/>
-            -->
+        <!---Area for episode information-->
+        <div id="crunchyRollStream">
+            <label for="crunchyRoll">CrunchyRoll</label>
+                <input type="checkbox" name="crunchyRoll"/>
+            <label for="crunchyRollEp">Episodes</label>
+                <input type="range" name="crunchyRollEp" id="crunchyRollEp" min="0" max="6" value="0"/>
+                <!-- Sample Generate from JavaScript
+                    Crunchyroll Episodes
+                    <label for="crunchyEpNum{#}">Episode: </label>
+                        <input type="number" name="crunchyEpNum{#}"/>
+                    <label for="crunchyEpTitle{#}">Title: </label>
+                        <input type="text" name="crunchyEpTitle{#}"/>
+                    <label for="crunchyEpLnkEN{#}">Link(EN): </label>
+                        <input type="url" name="crunchyEpLnkEN{#}"/>
+                    <label for="crunchyEpLnkJP{#}">Link(JP): </label>
+                        <input type="url" name="crunchyEpLnkJP{#}"/>
+                    <label for="crunchyEpLnkImg{#}">Thumbnail Link: </label>
+                        <input type="url" name="crunchyEpLnkImg{#}"/>
+                    <label for="crunchyEpAirEN{#}">Air date(EN): </label>
+                        <input type="date" name="crunchyEpAirEN{#}"/>
+                    <label for="crunchyEpAirJP{#}">Air date(JP): </label>
+                        <input type="date" name="crunchyEpAirJP{#}"/>
+                -->
+        </div>
+        <div id="hiDiveStream">
         <label for="hiDive">HiDive</label>
             <input type="checkbox" name="hiDive"/>
-        <label for="hiEp">Episodes</label>
-            <input type="range" name="hiEp" id="hiEp" min="0" max="6"/>
+        <label for="hiDiveEp">Episodes</label>
+            <input type="range" name="hiDiveEp" id="hiDiveEp" min="0" max="6" value="0"/>
+        </div>
+        <div id="netflixStream">
         <label for="netflix">Netflix</label>
             <input type="checkbox" name="netflix"/>
         <label for="netflixEp">Episodes</label>
-            <input type="range" name="netflixEp" id="netflixEp" min="0" max="6"/>
+            <input type="range" name="netflixEp" id="netflixEp" min="0" max="6" value="0"/>
+        </div>
         <input type="submit"/>
         <input type="reset"/>
     </form>
-    <!---Area for episode information-->
-    
     <script type="text/javascript" src="./UploadAnimeData.js"></script>
 </body>
 </html>
