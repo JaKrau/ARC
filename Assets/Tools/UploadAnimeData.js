@@ -65,7 +65,13 @@ class language{
         this.japanese = japanese;
     }
 }
-
+//Repeated document queries
+var crunchyRollCheckEl = document.querySelector("[name='crunchyRoll']");
+var hiDiveCheckEl = document.querySelector("[name='hiDive']");
+var netflixCheckEl = document.querySelector("[name='netflix']");
+var crunchyRollEpEl = document.querySelector("[name='crunchyRollEp']");
+var hiDiveEpEl = document.querySelector("[name='hiDiveEp']");
+var netflixEpEl = document.querySelector("[name='netflixEp']");
 
 /* sample HTML
 Crunchyroll Episodes
@@ -154,6 +160,64 @@ function buildEpisodeForm(stream, index){
     return episodeArea;
 }
 
+//Event listeners to change how many episodes there are
+crunchyRollCheckEl.addEventListener('change', crunchyRollBuildEpisodesEvent);
+crunchyRollEpEl.addEventListener('change', crunchyRollBuildEpisodesEvent);
+function crunchyRollBuildEpisodesEvent(){
+    if(crunchyRollCheckEl.checked === true){
+        let numEpisodes = crunchyRollEpEl.value;
+        buildStreamForm("crunchyRoll",numEpisodes);
+    }
+    else{
+        buildStreamForm("crunchyRoll", 0);
+    }
+}
+hiDiveCheckEl.addEventListener('change', hiDiveBuildEpisodesEvent);
+hiDiveEpEl.addEventListener('change', hiDiveBuildEpisodesEvent);
+function hiDiveBuildEpisodesEvent(){
+    if(hiDiveCheckEl.checked === true){
+        let numEpisodes = hiDiveEpEl.value;
+        buildStreamForm("hiDive",numEpisodes);
+    }
+    else{
+        buildStreamForm("hiDive", 0);
+    }
+}
+netflixCheckEl.addEventListener('change', netflixBuildEpisodesEvent);
+netflixEpEl.addEventListener('change', netflixBuildEpisodesEvent);
+function netflixBuildEpisodesEvent(){
+    if(netflixCheckEl.checked === true){
+        let numEpisodes = netflixEpEl.value;
+        buildStreamForm("netflix",numEpisodes);
+    }
+    else{
+        buildStreamForm("netflix", 0);
+    }
+}
+
+//Form Event submit sequence
+document.getElementById("series").addEventListener("submit", function(event){
+    event.preventDefault();
+    let mID = document.querySelector("[name='mID']").value;
+    let title = document.querySelector("[name='seriesTitle']").value;
+    let link = document.querySelector("[name='seriesLink']").value;
+    let imageLink = document.querySelector("[name='seriesImageLink']").value;
+    let currentSeason = document.querySelector("[name='currentSeason']").value;
+    let broadcastDay = document.querySelector("[name='broadcastDay']").value;
+    let episodes = new Array();
+    if(crunchyRollCheckEl.checked === true){
+        episodes.push(fillOutEpisodes("crunchyRoll"))
+    }
+    if(hiDiveCheckEl.checked === true){
+        episodes.push(fillOutEpisodes("hiDive"))
+    }
+    if(netflixCheckEl.checked === true){
+        episodes.push(fillOutEpisodes("netflix"))
+    }
+    let series = new animeSeries(mID, title, link, imageLink, currentSeason, broadcastDay, episodes);
+    postSeries(series);
+});
+//Get episodes array for each stream
 function buildStreamForm(stream,numberEpisodes){
     let streamEl = document.getElementById(stream + "Stream");
     document.querySelectorAll('.' + stream).forEach(epList => epList.remove());
@@ -162,7 +226,7 @@ function buildStreamForm(stream,numberEpisodes){
         streamEl.appendChild(episodeEl);
     }
 }
-
+//Fill in episodes array data
 function fillOutEpisodes(stream){
     let episodes = new Array();
     let numEpisodes = document.querySelector("[name='" + stream + "Ep']").value;
@@ -178,80 +242,8 @@ function fillOutEpisodes(stream){
     }
     return episodes;
 }
-async function postSeries(series){
-    try{
-        const response = await fetch("../Assets/Data/AnimeSeries.data", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(series),
-        });
-
-        const result = await response.json();
-        console.log("Success: ", result);
-    }
-    catch(error){
-        console.log("Error", error);
-    }
+//Should write information to data, but cannot access data
+function postSeries(series){
+    console.log(series);
+    //lack permissions for write to file...
 }
-
-var crunchyRollCheckEl = document.querySelector("[name='crunchyRoll']");
-var hiDiveCheckEl = document.querySelector("[name='hiDive']");
-var netflixCheckEl = document.querySelector("[name='netflix']");
-var crunchyRollEpEl = document.querySelector("[name='crunchyRollEp']");
-var hiDiveEpEl = document.querySelector("[name='hiDiveEp']");
-var netflixEpEl = document.querySelector("[name='netflixEp']");
-
-crunchyRollCheckEl.addEventListener('change', function(){
-    let numEpisodes = crunchyRollEpEl.value;
-    buildStreamForm("crunchyRoll",numEpisodes);
-});
-hiDiveCheckEl.addEventListener('change', function(){
-    let numEpisodes = hiDiveEpEl.value;
-    buildStreamForm("hiDive",numEpisodes);
-});
-netflixCheckEl.addEventListener('change', function(){
-    let numEpisodes = netflixEpEl.value;
-    buildStreamForm("netflix",numEpisodes);
-});
-crunchyRollEpEl.addEventListener('change', function(){
-    if(crunchyRollCheckEl.checked === true){
-        let numEpisodes = crunchyRollEpEl.value;
-        buildStreamForm("crunchyRoll",numEpisodes);
-    }
-});
-hiDiveEpEl.addEventListener('change', function(){
-    if(hiDiveCheckEl.checked === true){
-        let numEpisodes = hiDiveEpEl.value;
-        buildStreamForm("hiDive",numEpisodes);
-    }
-});
-netflixEpEl.addEventListener('change', function(){
-    if(netflixCheckEl.checked === true){
-        let numEpisodes = netflixEpEl.value;
-        buildStreamForm("netflix",numEpisodes);
-    }
-});
-
-document.getElementById("series").addEventListener("submit", function(event){
-    event.preventDefault();
-    let mID = document.querySelector("[name='mID']").value;
-    let title = document.querySelector("[name='seriesTitle']").value;
-    let link = document.querySelector("[name='seriesLink']").value;
-    let imageLink = document.querySelector("[name='seriesImageLink']").value;
-    let currentSeason = document.querySelector("[name='currentSeason']").value;
-    let broadcastDay = document.querySelector("[name='broadcastDay']").value;
-    let episodes = new Array();
-    if(document.querySelector("[name='crunchyRoll']").checked === true){
-        episodes.push(fillOutEpisodes("crunchyRoll"))
-    }
-    if(document.querySelector("[name='hiDive']").checked === true){
-        episodes.push(fillOutEpisodes("hiDive"))
-    }
-    if(document.querySelector("[name='netflix']").checked === true){
-        episodes.push(fillOutEpisodes("netflix"))
-    }
-    let series = new animeSeries(mID, title, link, imageLink, currentSeason, broadcastDay, episodes);
-    postSeries(series);
-});
