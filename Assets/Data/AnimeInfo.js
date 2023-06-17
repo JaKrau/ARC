@@ -24,7 +24,7 @@ animeData[0].push(JSON.parse('{"mID":"53613","title":"Dead Mount Death Play","li
 //Kizuna no Allele (Crunchyroll) -- sub only
 animeData[0].push(JSON.parse('{"mID":"51139","title":"Kizuna no Allele","link":"https://myanimelist.net/anime/51139/Kizuna_no_Allele","imageLink":"https://cdn.myanimelist.net/images/anime/1632/133752.jpg","currentSeason":"1","broadcastDay":"Monday","episodes":[[{"streamService":"crunchyRoll","episode":"","title":"~True Color~","link":"https://www.crunchyroll.com/watch/GD9UV8ZZ4/true-color","airDate":{"dubEn":"","subtitle":"2023-06-12T11:00"}}]]}'));
 
-//I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too (Crunchyroll)
+//[Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta] I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too (Crunchyroll)
 animeData[0].push(JSON.parse('{"mID":"52830","title":"I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too","link":"https://myanimelist.net/anime/52830/Isekai_de_Cheat_Skill_wo_Te_ni_Shita_Ore_wa_Genjitsu_Sekai_wo_mo_Musou_Suru__Level_Up_wa_Jinsei_wo_Kaeta","imageLink":"https://cdn.myanimelist.net/images/anime/1316/134327.jpg","currentSeason":"1","broadcastDay":"Monday","episodes":[[{"streamService":"crunchyRoll","episode":"9","title":"The Princess and the Assassin","link":"https://www.crunchyroll.com/watch/G2XU0DVQJ/the-princess-and-the-assassin","airDate":{"dubEn":"2023-06-19T14:00","subtitle":"2023-05-29T10:00"}},{"streamService":"crunchyRoll","episode":"10","title":"Master and Apprentice","link":"https://www.crunchyroll.com/watch/G8WUN0PM4/master-and-apprentice","airDate":{"dubEn":"2023-06-26T14:00","subtitle":"2023-06-05T10:00"}},{"streamService":"crunchyRoll","episode":"11","title":"To the Royal Capital","link":"https://www.crunchyroll.com/watch/GZ7UV1M48/to-the-royal-capital","airDate":{"dubEn":"2023-07-03T14:00","subtitle":"2023-06-12T10:00"}}]]}'));
 
 //[Kimi wa Houkago Insomnia] Insomniacs After School (HiDive)
@@ -74,29 +74,38 @@ animeData[2].push(JSON.parse('{"mID":"51536","title":"The IDOLM@STER Cinderella 
 animeData[2].push(JSON.parse('{"mID":"52034","title":"Oshi No Ko","link":"https://myanimelist.net/anime/52034/Oshi_no_Ko","imageLink":"https://cdn.myanimelist.net/images/anime/1812/134736.jpg","currentSeason":"1","broadcastDay":"Wednesday","episodes":[[{"streamService":"hiDive","episode":"4","title":"Actors","link":"https://www.hidive.com/stream/oshi-no-ko/s01e004","airDate":{"dubEn":"2023-06-14T09:00","subtitle":"2023-05-10T08:00"}},{"streamService":"hiDive","episode":"5","title":"Reality Dating Show","link":"https://www.hidive.com/stream/oshi-no-ko/s01e005","airDate":{"dubEn":"2023-06-21T09:00","subtitle":"2023-05-17T08:00"}},{"streamService":"hiDive","episode":"6","title":"Egosurfing","link":"https://www.hidive.com/stream/oshi-no-ko/s01e006","airDate":{"dubEn":"2023-06-28T09:00","subtitle":"2023-05-24T08:00"}},{"streamService":"hiDive","episode":"7","title":"Buzz","link":"https://www.hidive.com/stream/oshi-no-ko/s01e007","airDate":{"dubEn":"2023-07-05T09:00","subtitle":"2023-05-31T08:00"}},{"streamService":"hiDive","episode":"8","title":"First Time","link":"https://www.hidive.com/stream/oshi-no-ko/s01e008","airDate":{"dubEn":"2023-07-12T09:00","subtitle":"2023-06-07T08:00"}},{"streamService":"hiDive","episode":"9","title":"Komachi","link":"https://www.hidive.com/stream/oshi-no-ko/s01e009","airDate":{"dubEn":"2023-07-19T09:00","subtitle":"2023-06-14T08:00"}}]]}'));
 
 //Urusei Yatsura (HiDive)
-animeData[2].push(JSON.parse('{"mID":"50710","title":"Urusei Yatsura (2022)","link":"https://myanimelist.net/anime/50710/Urusei_Yatsura_2022?q=Uresei%20Yatsura&cat=anime","imageLink":"https://cdn.myanimelist.net/images/anime/1233/129144.jpg","currentSeason":"2","broadcastDay":"Wednesday","episodes":[[{"streamService":"hiDive","episode":"16","title":"FAMILY FEUD!! / HELLO, SAILOR SUIT!!","link":"https://www.hidive.com/stream/urusei-yatsura/s02e016","airDate":{"dubEn":"2023-06-14T10:00","subtitle":"2023-02-02T09:00"}},{"streamService":"hiDive","episode":"17","title":"A CHEST FULL OF LONGING!! / WISH UPON A STAR","link":"https://www.hidive.com/stream/urusei-yatsura/s02e017","airDate":{"dubEn":"2023-06-21T22:00","subtitle":"2023-02-09T09:00"}},{"streamService":"hiDive","episode":"18","title":"INDELIBLE LIPSTICK MAGIC!! / LETHAL ATTACKS: YAMINABE!","link":"https://www.hidive.com/stream/urusei-yatsura/s02e018","airDate":{"dubEn":"2023-06-28T11:00","subtitle":"2023-02-16T09:00"}},{"streamService":"hiDive","episode":"19","title":"MAGIC REALM! JUNGLE OF TERROR / PICKLED","link":"https://www.hidive.com/stream/urusei-yatsura/s02e019","airDate":{"dubEn":"2023-07-05T10:00","subtitle":"2023-02-23T09:00"}},{"streamService":"hiDive","episode":"20","title":"RECOVERING THAT WHICH WAS LOST","link":"https://www.hidive.com/stream/urusei-yatsura/s02e020","airDate":{"dubEn":"2023-07-12T10:00","subtitle":"2023-03-02T09:00"}},{"streamService":"hiDive","episode":"21","title":"COSMO TEACHER CAO-2 / OOH, SCARY! VOODOO DOLL","link":"https://www.hidive.com/stream/urusei-yatsura/s02e021","airDate":{"dubEn":"2023-07-19T10:00","subtitle":"2023-03-09T09:00"}}]]}'));
+animeData[2].push(JSON.parse('{"mID":"50710","title":"Urusei Yatsura (2022)","link":"https://myanimelist.net/anime/50710/Urusei_Yatsura_2022","imageLink":"https://cdn.myanimelist.net/images/anime/1233/129144.jpg","currentSeason":"2","broadcastDay":"Wednesday","episodes":[[{"streamService":"hiDive","episode":"16","title":"FAMILY FEUD!! / HELLO, SAILOR SUIT!!","link":"https://www.hidive.com/stream/urusei-yatsura/s02e016","airDate":{"dubEn":"2023-06-14T10:00","subtitle":"2023-02-02T09:00"}},{"streamService":"hiDive","episode":"17","title":"A CHEST FULL OF LONGING!! / WISH UPON A STAR","link":"https://www.hidive.com/stream/urusei-yatsura/s02e017","airDate":{"dubEn":"2023-06-21T22:00","subtitle":"2023-02-09T09:00"}},{"streamService":"hiDive","episode":"18","title":"INDELIBLE LIPSTICK MAGIC!! / LETHAL ATTACKS: YAMINABE!","link":"https://www.hidive.com/stream/urusei-yatsura/s02e018","airDate":{"dubEn":"2023-06-28T11:00","subtitle":"2023-02-16T09:00"}},{"streamService":"hiDive","episode":"19","title":"MAGIC REALM! JUNGLE OF TERROR / PICKLED","link":"https://www.hidive.com/stream/urusei-yatsura/s02e019","airDate":{"dubEn":"2023-07-05T10:00","subtitle":"2023-02-23T09:00"}},{"streamService":"hiDive","episode":"20","title":"RECOVERING THAT WHICH WAS LOST","link":"https://www.hidive.com/stream/urusei-yatsura/s02e020","airDate":{"dubEn":"2023-07-12T10:00","subtitle":"2023-03-02T09:00"}},{"streamService":"hiDive","episode":"21","title":"COSMO TEACHER CAO-2 / OOH, SCARY! VOODOO DOLL","link":"https://www.hidive.com/stream/urusei-yatsura/s02e021","airDate":{"dubEn":"2023-07-19T10:00","subtitle":"2023-03-09T09:00"}}]]}'));
 
 
 ////////////
 //Thursday//
 ////////////
 //Dr. Stone: New World (Crunchyroll, Funimation)
-animeData[3].push(JSON.parse(''));
+animeData[3].push(JSON.parse('{"mID":"48549","title":"Dr. Stone: New World","link":"https://myanimelist.net/anime/48549/Dr_Stone__New_World","imageLink":"https://cdn.myanimelist.net/images/anime/1316/136268.jpg","currentSeason":"3","broadcastDay":"Thursday","episodes":[[{"streamService":"crunchyRoll","episode":"9","title":"Beautiful Science","link":"https://www.crunchyroll.com/watch/G4VUQ8NVN/beautiful-science","airDate":{"dubEn":"2023-06-15T12:30","subtitle":"2023-06-01T07:30"}},{"streamService":"crunchyRoll","episode":"10","title":"SCIENCE WARS","link":"https://www.crunchyroll.com/watch/GD9UV8ZJV/science-wars","airDate":{"dubEn":"2023-06-22T12:30","subtitle":"2023-06-08T07:30"}},{"streamService":"crunchyRoll","episode":"11","title":"With This Fist, A Miracle","link":"https://www.crunchyroll.com/watch/GQJUGQ01M/with-this-fist-a-miracle","airDate":{"dubEn":"2023-06-29T12:30","subtitle":"2023-06-15T07:30"}}]]}'));
 
-//The Ancient Magus' Bride Season 2 (Crunchyroll)
-animeData[3].push(JSON.parse(''));
+//[Mahoutsukai no Yome Season 2] The Ancient Magus' Bride Season 2 (Crunchyroll)
+animeData[3].push(JSON.parse('{"mID":"52955","title":"The Ancient Magus Bride Season 2","link":"https://myanimelist.net/anime/52955/Mahoutsukai_no_Yome_Season_2","imageLink":"https://cdn.myanimelist.net/images/anime/1532/135155.jpg","currentSeason":"2","broadcastDay":"Thursday","episodes":[[{"streamService":"crunchyRoll","episode":"9","title":"Conscience does make cowards of us all.","link":"https://www.crunchyroll.com/watch/GX9UQZ5E8/conscience-does-make-cowards-of-us-all","airDate":{"dubEn":"2023-06-15T13:00","subtitle":"2023-06-01T08:00"}},{"streamService":"crunchyRoll","episode":"10","title":"Conscience does make cowards of us all. II","link":"https://www.crunchyroll.com/watch/G8WUN0VZ8/conscience-does-make-cowards-of-us-all-ii","airDate":{"dubEn":"2023-06-22T13:00","subtitle":"2023-06-08T08:00"}},{"streamService":"crunchyRoll","episode":"11","title":"The small leak will sink a great ship. I","link":"https://www.crunchyroll.com/watch/GQJUGQ01M/with-this-fist-a-miracle","airDate":{"dubEn":"2023-06-29T13:00","subtitle":"2023-06-15T08:00"}}]]}'));
 
-//Yuri is My Job! (Crunchyroll)
-animeData[3].push(JSON.parse(''));
+//[Watashi no Yuri wa Oshigoto desu!] Yuri is My Job! (Crunchyroll) --sub only
+animeData[3].push(JSON.parse('{"mID":"51817","title":"Yuri is My Job!","link":"https://myanimelist.net/anime/51817/Watashi_no_Yuri_wa_Oshigoto_desu","imageLink":"https://cdn.myanimelist.net/images/anime/1708/133360.jpg","currentSeason":"1","broadcastDay":"Thursday","episodes":[[{"streamService":"crunchyRoll","episode":"11","title":"Blume der Liebe","link":"https://www.crunchyroll.com/watch/GK9U3D20X/blume-der-liebe","airDate":{"dubEn":"","subtitle":"2023-06-15T07:00"}}]]}'));
 
-//Ranking of Kings: The Treasure Chest of Courage (Crunchyroll)
-animeData[3].push(JSON.parse(''));
+//[Ousama Ranking: Yuuki no Takarabako] Ranking of Kings: The Treasure Chest of Courage (Crunchyroll)
+animeData[3].push(JSON.parse('{"mID":"52657","title":"Ranking of Kings: The Treasure Chest of Courage","link":"https://myanimelist.net/anime/52657/Ousama_Ranking__Yuuki_no_Takarabako","imageLink":"https://cdn.myanimelist.net/images/anime/1897/131615.jpg","currentSeason":"2","broadcastDay":"Thursday","episodes":[[{"streamService":"crunchyRoll","episode":"8","title":"Kages Yearning | A Great Mother","link":"https://www.crunchyroll.com/watch/G0DUNJ8GX/kages-yearning--a-great-mother","airDate":{"dubEn":"2023-06-15T13:15","subtitle":"2023-06-01T11:00"}},{"streamService":"crunchyRoll","episode":"9","title":"Miranjo and the Demon | The Prince and His Treasures","link":"https://www.crunchyroll.com/watch/GJWU2E2QM/miranjo-and-the-demon--the-prince-and-his-treasures","airDate":{"dubEn":"2023-06-22T13:15","subtitle":"2023-06-08T11:00"}},{"streamService":"crunchyRoll","episode":"10","title":"Return of the Sword King","link":"https://www.crunchyroll.com/watch/GN7UDVDNW/return-of-the-sword-king","airDate":{"dubEn":"2023-06-29T13:15","subtitle":"2023-06-15T11:00"}}]]}'));
 
-//The Legendary Hero Is Dead! (Crunchyroll)
-animeData[3].push(JSON.parse(''));
+//[Yuusha ga Shinda!] The Legendary Hero Is Dead! (Crunchyroll)
+animeData[3].push(JSON.parse('{"mID":"51706","title":"The Legendary Hero Is Dead!","link":"https://myanimelist.net/anime/51706/Yuusha_ga_Shinda","imageLink":"https://cdn.myanimelist.net/images/anime/1868/133866.jpg","currentSeason":"1","broadcastDay":"Thursday","episodes":[[{"streamService":"crunchyRoll","episode":"9","title":"Into the Legendary Heros Past","link":"https://www.crunchyroll.com/watch/GJWU2EVNM/into-the-legendary-heros-past","airDate":{"dubEn":"2023-06-15T14:15","subtitle":"2023-06-01T09:30"}},{"streamService":"crunchyRoll","episode":"10","title":"The Raid of the Legendary Hero","link":"https://www.crunchyroll.com/watch/G7PU4J2Q2/the-raid-of-the-legendary-hero","airDate":{"dubEn":"2023-06-22T14:15","subtitle":"2023-06-08T09:30"}},{"streamService":"crunchyRoll","episode":"11","title":"The Legendary Hero Fights to the Death!","link":"https://www.crunchyroll.com/watch/G9DUEGN82/the-legendary-hero-fights-to-the-death","airDate":{"dubEn":"2023-06-29T14:15","subtitle":"2023-06-15T09:30"}}]]}'));
 
 //Opus.COLORs (Crunchyroll)
-animeData[3].push(JSON.parse(''));
+animeData[3].push(JSON.parse('{"mID":"51415","title":"Opus.COLORs","link":"https://myanimelist.net/anime/51415/OpusCOLORs","imageLink":"https://cdn.myanimelist.net/images/anime/1758/134733.jpg","currentSeason":"1","broadcastDay":"Thursday","episodes":[[{"streamService":"crunchyRoll","episode":"11","title":"The Heat Haze Clouded by Blue #C44303","link":"https://www.crunchyroll.com/watch/GEVUZN3MP/the-heat-haze-clouded-by-blue-c44303","airDate":{"dubEn":"","subtitle":"2023-06-15T09:00"}}]]}'));
+
+//[Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka IV: Fuka Shou - Yakusai-hen] Is It Wrong to Try to Pick Up Girls in a Dungeon? IV Part 2 (HiDive) --dub only
+animeData[3].push(JSON.parse('{"mID":"53111","title":"Is It Wrong to Try to Pick Up Girls in a Dungeon?","link":"https://myanimelist.net/anime/53111/Dungeon_ni_Deai_wo_Motomeru_no_wa_Machigatteiru_Darou_ka_IV__Fuka_Shou_-_Yakusai-hen","imageLink":"https://cdn.myanimelist.net/images/anime/1226/131884.jpg","currentSeason":"4","broadcastDay":"Thursday","episodes":[[{"streamService":"hiDive","episode":"20","title":"ASTREA FAMILIA | HEROIC DEATH","link":"https://www.hidive.com/stream/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon-iv/s04e020","airDate":{"dubEn":"2023-06-15T08:00","subtitle":"2023-03-02T07:00"}},{"streamService":"hiDive","episode":"21","title":"DAYDREAM | A SWEET LIE","link":"https://www.hidive.com/stream/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon-iv/s04e021","airDate":{"dubEn":"2023-06-22T08:00","subtitle":"2023-03-09T07:00"}},{"streamService":"hiDive","episode":"22","title":"LUVIA | STARRY FLOWER","link":"https://www.hidive.com/stream/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon-iv/s04e022","airDate":{"dubEn":"2023-06-29T08:00","subtitle":"2023-03-16T07:00"}}]]}'));
+
+//[Isekai Nonbiri Nouka] Farming Life in Another World (HiDive) --dub only
+animeData[3].push(JSON.parse('{"mID":"51462","title":"Farming Life in Another World","link":"https://myanimelist.net/anime/51462/Isekai_Nonbiri_Nouka","imageLink":"https://cdn.myanimelist.net/images/anime/1983/132329.jpg","currentSeason":"1","broadcastDay":"Thursday","episodes":[[{"streamService":"hiDive","episode":"2","title":"THE FIRST VILLAGER","link":"https://www.hidive.com/stream/farming-life-in-another-world/s01e002","airDate":{"dubEn":"2023-06-15T09:00","subtitle":"2023-01-13T08:00"}},{"streamService":"hiDive","episode":"3","title":"MORE AND MORE NEW ROOMMATES","link":"https://www.hidive.com/stream/farming-life-in-another-world/s01e003","airDate":{"dubEn":"2023-06-22T09:00","subtitle":"2023-01-20T08:00"}},{"streamService":"hiDive","episode":"4","title":"WATERWAYS MAKE LIFE FEEL COMPLETE","link":"https://www.hidive.com/stream/farming-life-in-another-world/s01e004","airDate":{"dubEn":"2023-06-29T09:00","subtitle":"2023-01-27T08:00"}},{"streamService":"hiDive","episode":"5","title":"CURRY, AND SURVIVING THE WINTER","link":"https://www.hidive.com/stream/farming-life-in-another-world/s01e005","airDate":{"dubEn":"2023-07-06T09:00","subtitle":"2023-02-03T08:00"}},{"streamService":"hiDive","episode":"6","title":"THIS IS A VILLAGE","link":"https://www.hidive.com/stream/farming-life-in-another-world/s01e006","airDate":{"dubEn":"2023-07-13T09:00","subtitle":"2023-02-10T08:00"}},{"streamService":"hiDive","episode":"7","title":"A HOSPITABLE HEART","link":"https://www.hidive.com/stream/farming-life-in-another-world/s01e007","airDate":{"dubEn":"2023-07-20T09:00","subtitle":"2023-02-17T08:00"}}]]}'));
+
+//Chiikawa (HiDive) --sub only
+animeData[3].push(JSON.parse('{"mID":"50250","title":"Chiikawa","link":"https://myanimelist.net/anime/50250/Chiikawa","imageLink":"https://cdn.myanimelist.net/images/anime/1783/121944.jpg","currentSeason":"1","broadcastDay":"Thursday","episodes":[[{"streamService":"hiDive","episode":"44","title":"SALESMAN","link":"https://www.hidive.com/stream/chiikawa/s01e044","airDate":{"dubEn":"","subtitle":"2023-06-15T10:55"}},{"streamService":"hiDive","episode":"45","title":"FRIED SHIITAKE / CREAM PUFFS","link":"https://www.hidive.com/stream/chiikawa/s01e045","airDate":{"dubEn":"","subtitle":"2023-06-22T10:55"}},{"streamService":"hiDive","episode":"46","title":"BENTO / THEYRE PAJAMAS","link":"https://www.hidive.com/stream/chiikawa/s01e046","airDate":{"dubEn":"","subtitle":"2023-06-29T10:55"}}]]}'));
 
 //////////
 //Friday//
@@ -125,6 +134,9 @@ animeData[4].push(JSON.parse(''));
 //Too Cute Crisis (HiDive)
 animeData[4].push(JSON.parse(''));
 
+//[Edomae Elf] Otaku Elf (HiDive)
+animeData[4].push(JSON.parse(''));
+
 ////////////
 //Saturday//
 ////////////
@@ -132,10 +144,10 @@ animeData[4].push(JSON.parse(''));
 animeData[5].push(JSON.parse(''));
 
 //[Mix: Meisei Story 2nd Season - Nidome no Natsu, Sora no Mukou e] MIX Season 2 (Crunchyroll, Funimation)
-animeData[5].push(JSON.parse('');
+animeData[5].push(JSON.parse(''));
 
 //One Piece (Crunchyroll, Funimation)
-animeData[5].push(JSON.parse('');
+animeData[5].push(JSON.parse(''));
 
 //[Yamada-kun to Lv999 no Koi wo Suru] My Love Story with Yamada-kun at Lv999 (Crunchyroll)
 animeData[5].push(JSON.parse(''));
@@ -152,7 +164,7 @@ animeData[5].push(JSON.parse(''));
 //[Hirogaru Sky! Precure] Soaring Sky! Pretty Cure (Crunchyroll)
 animeData[5].push(JSON.parse(''));
 
-//[Edomae Elf] Otaku Elf (HiDive)
+//[Boku no Kokoro no Yabai Yatsu] The Dangers in My Heart (HiDive)
 animeData[5].push(JSON.parse(''));
 
 //////////
@@ -175,6 +187,3 @@ animeData[6].push(JSON.parse(''));
 
 //[Tensei Kizoku no Isekai Boukenroku: Jichou wo Shiranai Kamigami no Shito] The Aristocrat's Otherworldly Adventure: Serving Gods Who Go Too Far (Crunchyroll)
 animeData[6].push(JSON.parse('{"mID":"52608","title":"The Aristocrats Otherworldly Adventure: Serving Gods Who Go Too Far","link":"https://myanimelist.net/anime/52608/Tensei_Kizoku_no_Isekai_Boukenroku__Jichou_wo_Shiranai_Kamigami_no_Shito","imageLink":"https://cdn.myanimelist.net/images/anime/1071/135255.jpg","currentSeason":"1","broadcastDay":"Sunday","episodes":[[{"streamService":"crunchyRoll","episode":"10","title":"The Trials of an A-Rank Adventurer","link":"https://www.crunchyroll.com/watch/GWDU8QVEK/the-trials-of-an-a-rank-adventurer","airDate":{"dubEn":"2023-06-18T12:00","subtitle":"2023-06-04T06:00"}},{"streamService":"crunchyRoll","episode":"11","title":"Omen of an Onslaught","link":"https://www.crunchyroll.com/watch/GG1U2ZW40/omen-of-an-onslaught","airDate":{"dubEn":"2023-06-25T12:00","subtitle":"2023-06-11T06:00"}}]]}'));
-
-//[Boku no Kokoro no Yabai Yatsu] The Dangers in My Heart (HiDive)
-animeData[6].push(JSON.parse(''));
