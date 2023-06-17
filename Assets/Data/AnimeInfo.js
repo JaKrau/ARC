@@ -6,7 +6,7 @@ var animeData = [newArray(), newArray(), newArray(), newArray(), newArray(), new
 //[Isekai wa Smartphone to Tomo ni. 2] In Another World with a Smartphone 2 (Crunchyroll)
 animeData[0].push(JSON.parse('{"mID":"51632","title":"In Another World With My Smartphone 2","link":"https://myanimelist.net/anime/51632/Isekai_wa_Smartphone_to_Tomo_ni_2","imageLink":"https://cdn.myanimelist.net/images/anime/1932/131464.jpg","currentSeason":"2","broadcastDay":"Monday","episodes":[[{"streamService":"crunchyRoll","episode":"10","title":"Amnesia and the Mystic Eye of Petrification","link":"https://www.crunchyroll.com/watch/GEVUZN3J2/amnesia-and-the-mystic-eye-of-petrification","airDate":{"dubEn":"2023-06-19T12:30","subtitle":"2023-06-05T09:00"}},{"streamService":"crunchyRoll","episode":"11","title":"Sister from Another World and a Sparkling First Love","link":"https://www.crunchyroll.com/watch/G7PU4J2PE/sister-from-another-world-and-a-sparkling-first-love","airDate":{"dubEn":"2023-06-26T12:30","subtitle":"2023-06-12T09:00"}}]]}'));
 
-//[Kanojo ga Koushaku-tei ni Itta Riyuu] The Reason Why Raeliana Ended up at the Duke's Mansion (Crunchyroll) --EN/JP updates same day
+//[Kanojo ga Koushaku-tei ni Itta Riyuu] The Reason Why Raeliana Ended up at the Duke's Mansion (Crunchyroll) --Dub/Sub same episode
 animeData[0].push(JSON.parse('{"mID":"52308","title":"The Reason Why Raeliana Ended up at the Dukes Mansion","link":"https://myanimelist.net/anime/52308/Kanojo_ga_Koushaku-tei_ni_Itta_Riyuu","imageLink":"https://cdn.myanimelist.net/images/anime/1109/130452.jpg","currentSeason":"1","broadcastDay":"Monday","episodes":[[{"streamService":"crunchyRoll","episode":"10","title":"Why Raeliana Called Him Grandpa","link":"https://www.crunchyroll.com/watch/GMKUXG38V/why-raeliana-called-him-grandpa","airDate":{"dubEn":"2023-06-12T06:00","subtitle":"2023-06-12T06:00"}}]]}'));
 
 //Golden Kamuy Season 4 (Crunchyroll, Funimation)
@@ -21,7 +21,7 @@ animeData[0].push(JSON.parse('{"mID":"49387","title":"Vinland Saga","link":"http
 //Dead Mount Death Play (Crunchyroll)
 animeData[0].push(JSON.parse('{"mID":"53613","title":"Dead Mount Death Play","link":"https://myanimelist.net/anime/53613/Dead_Mount_Death_Play","imageLink":"https://cdn.myanimelist.net/images/anime/1930/133758.jpg","currentSeason":"1","broadcastDay":"Monday","episodes":[[{"streamService":"crunchyRoll","episode":"9","title":"The Signpost","link":"https://www.crunchyroll.com/watch/GK9U3DN11/the-signpost","airDate":{"dubEn":"2023-06-19T14:30","subtitle":"2023-06-05T08:30"}},{"streamService":"crunchyRoll","episode":"10","title":"The Emblem","link":"https://www.crunchyroll.com/watch/G50UZ1DQ5/the-emblem","airDate":{"dubEn":"2023-06-26T14:30","subtitle":"2023-06-12T08:30"}}]]}'));
 
-//Kizuna no Allele (Crunchyroll) -- sub only
+//Kizuna no Allele (Crunchyroll) --sub only
 animeData[0].push(JSON.parse('{"mID":"51139","title":"Kizuna no Allele","link":"https://myanimelist.net/anime/51139/Kizuna_no_Allele","imageLink":"https://cdn.myanimelist.net/images/anime/1632/133752.jpg","currentSeason":"1","broadcastDay":"Monday","episodes":[[{"streamService":"crunchyRoll","episode":"","title":"~True Color~","link":"https://www.crunchyroll.com/watch/GD9UV8ZZ4/true-color","airDate":{"dubEn":"","subtitle":"2023-06-12T11:00"}}]]}'));
 
 //[Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta] I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too (Crunchyroll)
@@ -111,31 +111,31 @@ animeData[3].push(JSON.parse('{"mID":"50250","title":"Chiikawa","link":"https://
 //Friday//
 //////////
 //Mashle: Magic and Muscles (Crunchyroll)
-animeData[4].push(JSON.parse(''));
+animeData[4].push(JSON.parse('{"mID":"52211","title":"Mashle: Magic and Muscles","link":"https://myanimelist.net/anime/52211/Mashle","imageLink":"https://cdn.myanimelist.net/images/anime/1218/135107.jpg","currentSeason":"1","broadcastDay":"Friday","episodes":[[{"streamService":"crunchyRoll","episode":"4","title":"Mash Burnedead and the Challenging Magic User","link":"https://www.crunchyroll.com/watch/G2XU0DQ3G/mash-burnedead-and-the-challenging-magic-user","airDate":{"dubEn":"2023-06-16T12:30","subtitle":"2023-04-28T09:30"}},{"streamService":"crunchyRoll","episode":"5","title":"Mash Burnedead and the Unpopular Classmate","link":"https://www.crunchyroll.com/watch/GMKUXGMQZ/mash-burnedead-and-the-unpopular-classmate","airDate":{"dubEn":"2023-06-23T12:30","subtitle":"2023-05-05T09:30"}},{"streamService":"crunchyRoll","episode":"6","title":"Mash Burnedead and the Magic of Iron","link":"https://www.crunchyroll.com/watch/GVWU04XWP/mash-burnedead-and-the-magic-of-iron","airDate":{"dubEn":"2023-06-30T12:30","subtitle":"2023-05-12T09:30"}},{"streamService":"crunchyRoll","episode":"6.5","title":"Mash Burnedead and the Mysterious Letter","link":"https://www.crunchyroll.com/watch/G31UXZEW3/mash-burnedead-and-the-mysterious-letter","airDate":{"dubEn":"2023-07-07T12:30","subtitle":"2023-05-19T09:30"}},{"streamService":"crunchyRoll","episode":"7","title":"Mash Burnedead and the Puppet Master","link":"https://www.crunchyroll.com/watch/GPWUKDJZE/mash-burnedead-and-the-puppet-master","airDate":{"dubEn":"2023-07-14T12:30","subtitle":"2023-05-26T09:30"}},{"streamService":"crunchyRoll","episode":"8","title":"Mash Burnedead and the Wolves of Magic","link":"https://www.crunchyroll.com/watch/G2XU0D148/mash-burnedead-and-the-wolves-of-magic","airDate":{"dubEn":"2023-07-21T12:30","subtitle":"2023-06-02T09:30"}},{"streamService":"crunchyRoll","episode":"9","title":"Mash Burnedead and the Accelerated Battle","link":"https://www.crunchyroll.com/watch/G8WUN0VG8/mash-burnedead-and-the-accelerated-battle","airDate":{"dubEn":"2023-07-28T12:30","subtitle":"2023-06-09T09:30"}},{"streamService":"crunchyRoll","episode":"10","title":"Mash Burnedead and the Divine Visionary","link":"https://www.crunchyroll.com/watch/GZ7UV132K/mash-burnedead-and-the-divine-visionary","airDate":{"dubEn":"2023-08-04T12:30","subtitle":"2023-06-16T09:30"}}]]}'));
 
-//[Tonikaku Kawaii 2nd Season] TONIKAWA: Over The Moon For You Season 2 (Crunchyroll)
-animeData[4].push(JSON.parse(''));
+//[Tonikaku Kawaii 2nd Season] TONIKAWA: Over The Moon For You Season 2 (Crunchyroll) --Dub/Sub same episode
+animeData[4].push(JSON.parse('{"mID":"50307","title":"TONIKAWA: Over The Moon For You Season 2","link":"https://myanimelist.net/anime/50307/Tonikaku_Kawaii_2nd_Season","imageLink":"https://cdn.myanimelist.net/images/anime/1996/133361.jpg","currentSeason":"2","broadcastDay":"Friday","episodes":[[{"streamService":"crunchyRoll","episode":"11","title":"Untitled","link":"https://www.crunchyroll.com/watch/G2XU0DVXN/","airDate":{"dubEn":"2023-06-16T10:15","subtitle":"2023-06-16T10:15"}}]]}'));
 
-//[Megami no Café Terrace] The Café Terrace and Its Goddesses (Crunchyroll)
-animeData[4].push(JSON.parse(''));
+//[Megami no Café Terrace] The Café Terrace and Its Goddesses (Crunchyroll) --sub only
+animeData[4].push(JSON.parse('{"mID":"52973","title":"The Café Terrace and Its Goddesses","link":"https://myanimelist.net/anime/52973/Megami_no_Caf%C3%A9_Terrace","imageLink":"https://cdn.myanimelist.net/images/anime/1963/136050.jpg","currentSeason":"1","broadcastDay":"Friday","episodes":[[{"streamService":"crunchyRoll","episode":"11","title":"Fireworks of Love","link":"https://www.crunchyroll.com/watch/GJWU2E70D/fireworks-of-love","airDate":{"dubEn":"","subtitle":"2023-06-16T11:15"}}]]}'));
 
-//[Isekai One Turn Kill Neesan: Ane Douhan no Isekai Seikatsu Hajimemashita] My One-Hit Kill Sister (Crunchyroll)
-animeData[4].push(JSON.parse(''));
+//[Isekai One Turn Kill Neesan: Ane Douhan no Isekai Seikatsu Hajimemashita] My One-Hit Kill Sister (Crunchyroll) --sub only
+animeData[4].push(JSON.parse('{"mID":"51219","title":"My One-Hit Kill Sister","link":"https://myanimelist.net/anime/51219/Isekai_One_Turn_Kill_Neesan__Ane_Douhan_no_Isekai_Seikatsu_Hajimemashita","imageLink":"https://cdn.myanimelist.net/images/anime/1250/135256.jpg","currentSeason":"1","broadcastDay":"Friday","episodes":[[{"streamService":"crunchyRoll","episode":"11","title":"Shark from Another World","link":"https://www.crunchyroll.com/watch/GK9U3D2KE/shark-from-another-world","airDate":{"dubEn":"","subtitle":"2023-06-16T07:30"}}]]}'));
 
-//[Mahou Shoujo Magical Destroyers] Magical Destroyers (Crunchyroll)
-animeData[4].push(JSON.parse(''));
+//[Mahou Shoujo Magical Destroyers] Magical Destroyers (Crunchyroll) --sub only
+animeData[4].push(JSON.parse('{"mID":"48981","title":"Magical Destroyers","link":"https://myanimelist.net/anime/48981/Mahou_Shoujo_Magical_Destroyers","imageLink":"https://cdn.myanimelist.net/images/anime/1203/134079.jpg","currentSeason":"1","broadcastDay":"Friday","episodes":[[{"streamService":"crunchyRoll","episode":"11","title":"MAGICAL DESTROYERS","link":"https://www.crunchyroll.com/watch/G9DUEGN52/magical-destroyers","airDate":{"dubEn":"","subtitle":"2023-06-16T11:45"}}]]}'));
 
-//[Rokudou no Onna-tachi] Rokudo's Bad Girls (Crunchyroll)
-animeData[4].push(JSON.parse(''));
+//[Rokudou no Onna-tachi] Rokudo's Bad Girls (Crunchyroll) --sub only
+animeData[4].push(JSON.parse('{"mID":"54259","title":"Rokudos Bad Girls","link":"https://myanimelist.net/anime/54259/Rokudou_no_Onna-tachi","imageLink":"https://cdn.myanimelist.net/images/anime/1933/134709.jpg","currentSeason":"1","broadcastDay":"Friday","episodes":[[{"streamService":"crunchyRoll","episode":"11","title":"This Is Where We Say Goodbye, Rokudo","link":"https://www.crunchyroll.com/watch/GEVUZNQZW/this-is-where-we-say-goodbye-rokudo","airDate":{"dubEn":"","subtitle":"2023-06-16T10:45"}}]]}'));
 
-//Birdie Wing: Golf Girls' Story Season 2 (Crunchyroll)
-animeData[4].push(JSON.parse(''));
+//Birdie Wing: Golf Girls' Story Season 2 (Crunchyroll) --sub only
+animeData[4].push(JSON.parse('{"mID":"52229","title":"Birdie Wing: Golf Girls Story","link":"https://myanimelist.net/anime/52229/Birdie_Wing__Golf_Girls_Story_Season_2","imageLink":"https://cdn.myanimelist.net/images/anime/1407/135263.jpg","currentSeason":"1","broadcastDay":"Friday","episodes":[[{"streamService":"crunchyRoll","episode":"24","title":"Promise","link":"https://www.crunchyroll.com/watch/G31UXZEZ3/promise","airDate":{"dubEn":"","subtitle":"2023-06-16T11:30"}}]]}'));
 
-//Too Cute Crisis (HiDive)
-animeData[4].push(JSON.parse(''));
+//[Kawaisugi Crisis] Too Cute Crisis (HiDive) --sub only
+animeData[4].push(JSON.parse('{"mID":"53163","title":"Too Cute Crisis","link":"https://myanimelist.net/anime/53163/Kawaisugi_Crisis","imageLink":"https://cdn.myanimelist.net/images/anime/1332/134658.jpg","currentSeason":"1","broadcastDay":"Friday","episodes":[[{"streamService":"hiDive","episode":"11","title":"WARRIORS","link":"https://www.hidive.com/stream/too-cute-crisis/s01e011","airDate":{"dubEn":"","subtitle":"2023-06-16T08:00"}},{"streamService":"hiDive","episode":"12","title":"Coming Soon","link":"https://www.hidive.com/stream/too-cute-crisis/s01e012","airDate":{"dubEn":"","subtitle":"2023-06-23T08:00"}}]]}'));
 
-//[Edomae Elf] Otaku Elf (HiDive)
-animeData[4].push(JSON.parse(''));
+//[Edomae Elf] Otaku Elf (HiDive) --sub only
+animeData[4].push(JSON.parse('{"mID":"52081","title":"Otaku Elf","link":"https://myanimelist.net/anime/52081/Edomae_Elf","imageLink":"https://cdn.myanimelist.net/images/anime/1171/133777.jpg","currentSeason":"1","broadcastDay":"Friday","episodes":[[{"streamService":"hiDive","episode":"11","title":"DETECTIVE KOMA-CHAN","link":"https://www.hidive.com/stream/otaku-elf/s01e011","airDate":{"dubEn":"","subtitle":"2023-06-16T11:25"}},{"streamService":"hiDive","episode":"12","title":"Coming Soon","link":"https://www.hidive.com/stream/otaku-elf/s01e012","airDate":{"dubEn":"","subtitle":"2023-06-23T11:25"}}]]}'));
 
 ////////////
 //Saturday//
