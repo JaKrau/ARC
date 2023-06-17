@@ -26,35 +26,6 @@ Working variables
 var favorites = new Array();
 var episodes = [new Array(), new Array(), new Array(), new Array()];
 
-// when i click a button
-// it adds an item to a separate 'favorites' list
-// when the item gets added to the favorites list it has a button to remove it from the list
-
-
-// function to make it so when a button is clicked in the item list, it gets the item name and creates a new li and sets its text content to the itemName
-/* document.getElementById('itemList').addEventListener('click', function(event) {
-    if (event.target.classList.contains('addButton')) {
-      var listItem = event.target.parentNode;
-      // itemName variable set to only include the text content of the list item
-      var itemName = listItem.firstChild.textContent.trim();
-      // logged to console here to make sure the correct item is being targeted in the event
-      console.log(itemName)
-      console.log(listItem)
-  
-      // Create a new favorite item element
-      var favoriteItem = document.createElement('li');
-      favoriteItem.textContent = itemName;
-  
-      // Append the favorite item to the favorites list
-      document.querySelector('.favList ul').appendChild(favoriteItem);
-    }
-  }); */
-
-//---------------------------------------------------------------------------------//
-
-// the same code as above but with a function to make calling it easier if needed
-// this code also has a remove button with it
-
 var listItem; // declared variable in global scope
 var itemName; // declared variable in global scope
 
@@ -65,10 +36,12 @@ function meLikey() {
   var favItem = document.createElement('li');
   favItem.textContent = itemName;
 
+  // creates removeBtn variable and assigns it, adds the button text and appropriate class
   var removeBtn = document.createElement("button");
   removeBtn.textContent = "Remove";
   removeBtn.classList.add("removeBtn");
 
+  // adds the remove button to the favorite item and adds the item to the favorites list
   favItem.appendChild(removeBtn);
   favList.appendChild(favItem);
 
@@ -107,12 +80,9 @@ buttonContainerEl.addEventListener("click", function() {
     listItem.remove();
   }
 */
+// resets the clear list button to be invisible again once list is clear
   clearListButton.style.display = 'none';
 });
-
-//---------------------------------------------------------------------------------//
-
-
 
 /*
 Local Storage / Favorites Bar functions
@@ -121,6 +91,7 @@ function getFavorites(){
 
 }
 function clearFavorite(){
+  // gets the favList by it's id and sets its children to blank text, clearing out the list
   var favList = document.getElementById("favList")
   /*while (favList.firstChild) {
     favList.removeChild(favList.lastChild);
@@ -128,7 +99,7 @@ function clearFavorite(){
   favList.textContent = "";
 }
 function addFavorite(name){
-
+// this is taken care of in the section of code above with the 'meLikey' function
 }
 function removeFavorite(key){
 
