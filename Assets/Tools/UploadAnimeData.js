@@ -12,13 +12,13 @@ DataStructure
 ---episodeNumber
 ---episodeTitle
 ---episodeLink[] == By Streaming Service
-----japanese
-----english
+----subtitle
+----dubEn
 ---episodeSummary == Might be able to handle through API request
 ---episodeImage
 ---episodeAirDate
-----japanese
-----english
+----subtitle
+----dubEn
 */
 
 class animeSeries{
@@ -47,21 +47,21 @@ class episode{
     link;           //language class links to different episodes
     imageLink;      //string link to episode thumbnail
     airDate;        //language class air dates by version
-    constructor(streamService, episode, title, link, airEnglish, airJapanese){
+    constructor(streamService, episode, title, link, airDubEn, airSubtitle){
         this.streamService = streamService
         this.episode = episode;
         this.title = title;
         this.link = link;
-        this.airDate = new language(airEnglish, airJapanese);
+        this.airDate = new language(airDubEn, airSubtitle);
     }
 }
 
 class language{
-    english;        //English version
-    japanese;       //Japanese version
-    constructor(english, japanese){
-        this.english = english;
-        this.japanese = japanese;
+    dubEn;        //DubEn version
+    subtitle;       //Subtitle version
+    constructor(dubEn, subtitle){
+        this.dubEn = dubEn;
+        this.subtitle = subtitle;
     }
 }
 //Repeated document queries
@@ -95,10 +95,10 @@ Crunchyroll Episodes
         <input type="text" name="crunchyEpTitle{#}"/>
     <label for="crunchyRollLink{#}">Stream Link: </label>
         <input type="url" name="crunchyEpLnkEN{#}"/>
-    <label for="crunchyRollAirEN{#}">Air date(EN): </label>
-        <input type="datetime-local" name="crunchyEpAirEN{#}"/>
-    <label for="crunchyRollAirJP{#}">Air date(JP): </label>
-        <input type="datetime-local" name="crunchyEpAirJP{#}"/>
+    <label for="crunchyRollAirDubEN{#}">Air date(DUB): </label>
+        <input type="datetime-local" name="crunchyEpAirDubEN{#}"/>
+    <label for="crunchyRollAirSubtitle{#}">Air date(SUB): </label>
+        <input type="datetime-local" name="crunchyEpAirSubtitle{#}"/>
 </div>
 */
 function buildEpisodeForm(stream, index){
@@ -133,23 +133,23 @@ function buildEpisodeForm(stream, index){
     episodeArea.appendChild(linkLabel);
     episodeArea.appendChild(linkInput);
 
-    let airENLabel = document.createElement('label');
-    airENLabel.htmlFor = stream + "AirEN" + index;
-    airENLabel.textContent = "Air date (EN):";
-    let airENInput = document.createElement('input');
-    airENInput.name = stream + "AirEN" + index;
-    airENInput.type = "datetime-local";
-    episodeArea.appendChild(airENLabel);
-    episodeArea.appendChild(airENInput);
+    let airDubENLabel = document.createElement('label');
+    airDubENLabel.htmlFor = stream + "AirDubEN" + index;
+    airDubENLabel.textContent = "Air date (DUB):";
+    let airDubENInput = document.createElement('input');
+    airDubENInput.name = stream + "AirDubEN" + index;
+    airDubENInput.type = "datetime-local";
+    episodeArea.appendChild(airDubENLabel);
+    episodeArea.appendChild(airDubENInput);
 
-    let airJPLabel = document.createElement('label');
-    airJPLabel.htmlFor = stream + "AirJP" + index;
-    airJPLabel.textContent = "Air date (JP):";
-    let airJPInput = document.createElement('input');
-    airJPInput.name = stream + "AirJP" + index;
-    airJPInput.type = "datetime-local";
-    episodeArea.appendChild(airJPLabel);
-    episodeArea.appendChild(airJPInput);
+    let airSubtitleLabel = document.createElement('label');
+    airSubtitleLabel.htmlFor = stream + "AirSubtitle" + index;
+    airSubtitleLabel.textContent = "Air date (SUB):";
+    let airSubtitleInput = document.createElement('input');
+    airSubtitleInput.name = stream + "AirSubtitle" + index;
+    airSubtitleInput.type = "datetime-local";
+    episodeArea.appendChild(airSubtitleLabel);
+    episodeArea.appendChild(airSubtitleInput);
 
     return episodeArea;
 }
@@ -219,9 +219,9 @@ function fillOutEpisodes(stream){
         let num = document.querySelector("[name='" + stream + "Num" + index + "']").value;
         let title = document.querySelector("[name='" + stream + "Title" + index + "']").value;
         let link = document.querySelector("[name='" + stream + "Link" + index + "']").value;
-        let airEN = document.querySelector("[name='" + stream + "AirEN" + index + "']").value;
-        let airJP = document.querySelector("[name='" + stream + "AirJP" + index + "']").value;
-        episodes.push(new episode(stream, num, title, link, airEN, airJP))
+        let airDubEN = document.querySelector("[name='" + stream + "AirDubEN" + index + "']").value;
+        let airSubtitle = document.querySelector("[name='" + stream + "AirSubtitle" + index + "']").value;
+        episodes.push(new episode(stream, num, title, link, airDubEN, airSubtitle))
     }
     return episodes;
 }
