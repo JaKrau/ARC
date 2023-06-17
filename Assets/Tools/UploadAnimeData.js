@@ -47,12 +47,11 @@ class episode{
     link;           //language class links to different episodes
     imageLink;      //string link to episode thumbnail
     airDate;        //language class air dates by version
-    constructor(streamService, episode, title, linkEnglish, linkJapanese, imageLink, airEnglish, airJapanese){
+    constructor(streamService, episode, title, link, airEnglish, airJapanese){
         this.streamService = streamService
         this.episode = episode;
         this.title = title;
-        this.link = new language(linkEnglish, linkJapanese);
-        this.imageLink = imageLink;
+        this.link = link;
         this.airDate = new language(airEnglish, airJapanese);
     }
 }
@@ -74,26 +73,39 @@ var hiDiveEpEl = document.querySelector("[name='hiDiveEp']");
 var netflixEpEl = document.querySelector("[name='netflixEp']");
 
 /* sample HTML
+<div id="crunchyRollDiv0" class="crunchyRoll">...</div>
+<div id="crunchyRollDiv2" class="crunchyRoll">...</div>
+...
+<div id="crunchyRollDiv{numberEpisodes}" class="crunchyRoll">...</div>
+*/
+function buildStreamForm(stream,numberEpisodes){
+    let streamEl = document.getElementById(stream + "Stream");
+    document.querySelectorAll('.' + stream).forEach(epList => epList.remove());
+    for (let i = 0; i < numberEpisodes; i++){
+        let episodeEl = buildEpisodeForm(stream, i);
+        streamEl.appendChild(episodeEl);
+    }
+}
+/* sample HTML
 Crunchyroll Episodes
-                <label for="crunchyEpNum{#}">Episode: </label>
-                    <input type="number" name="crunchyEpNum{#}"/>
-                <label for="crunchyEpTitle{#}">Title: </label>
-                    <input type="text" name="crunchyEpTitle{#}"/>
-                <label for="crunchyEpLnkEN{#}">Link(EN): </label>
-                    <input type="url" name="crunchyEpLnkEN{#}"/>
-                <label for="crunchyEpLnkJP{#}">Link(JP): </label>
-                    <input type="url" name="crunchyEpLnkJP{#}"/>
-                <label for="crunchyEpLnkImg{#}">Thumbnail Link: </label>
-                    <input type="url" name="crunchyEpLnkImg{#}"/>
-                <label for="crunchyEpAirEN{#}">Air date(EN): </label>
-                    <input type="date" name="crunchyEpAirEN{#}"/>
-                <label for="crunchyEpAirJP{#}">Air date(JP): </label>
-                    <input type="date" name="crunchyEpAirJP{#}"/>
+<div id="crunchyRollDiv{#}" class="crunchyRoll">
+    <label for="crunchyRollNum{#}">Episode: </label>
+        <input type="number" name="crunchyEpNum{#}"/>
+    <label for="crunchyRollTitle{#}">Title: </label>
+        <input type="text" name="crunchyEpTitle{#}"/>
+    <label for="crunchyRollLink{#}">Stream Link: </label>
+        <input type="url" name="crunchyEpLnkEN{#}"/>
+    <label for="crunchyRollAirEN{#}">Air date(EN): </label>
+        <input type="datetime-local" name="crunchyEpAirEN{#}"/>
+    <label for="crunchyRollAirJP{#}">Air date(JP): </label>
+        <input type="datetime-local" name="crunchyEpAirJP{#}"/>
+</div>
 */
 function buildEpisodeForm(stream, index){
     let episodeArea = document.createElement('div')
-    episodeArea.id = stream + "EP" + index;
+    episodeArea.id = stream + "Div" + index;
     episodeArea.className = stream;
+
     let epLabel = document.createElement('label');
     epLabel.htmlFor = stream + "Num" + index;
     epLabel.textContent = "Episode Number:";
@@ -112,39 +124,21 @@ function buildEpisodeForm(stream, index){
     episodeArea.appendChild(titleLabel);
     episodeArea.appendChild(titleInput);
 
-    let lnkENLabel = document.createElement('label');
-    lnkENLabel.htmlFor = stream + "LnkEN" + index;
-    lnkENLabel.textContent = "Stream Link(EN):";
-    let lnkENInput = document.createElement('input');
-    lnkENInput.name = stream + "LnkEN" + index;
-    lnkENInput.type = "url";
-    episodeArea.appendChild(lnkENLabel);
-    episodeArea.appendChild(lnkENInput);
-
-    let lnkJPLabel = document.createElement('label');
-    lnkJPLabel.htmlFor = stream + "LnkJP" + index;
-    lnkJPLabel.textContent = "Stream Link(JP):";
-    let lnkJPInput = document.createElement('input');
-    lnkJPInput.name = stream + "LnkJP" + index;
-    lnkJPInput.type = "url";
-    episodeArea.appendChild(lnkJPLabel);
-    episodeArea.appendChild(lnkJPInput);
-
-    let lnkImgLabel = document.createElement('label');
-    lnkImgLabel.htmlFor = stream + "LnkImg" + index;
-    lnkImgLabel.textContent = "Thumbnail Link:";
-    let lnkImgInput = document.createElement('input');
-    lnkImgInput.name = stream + "LnkImg" + index;
-    lnkImgInput.type = "url";
-    episodeArea.appendChild(lnkImgLabel);
-    episodeArea.appendChild(lnkImgInput);
+    let linkLabel = document.createElement('label');
+    linkLabel.htmlFor = stream + "Link" + index;
+    linkLabel.textContent = "Stream Link:";
+    let linkInput = document.createElement('input');
+    linkInput.name = stream + "Link" + index;
+    linkInput.type = "url";
+    episodeArea.appendChild(linkLabel);
+    episodeArea.appendChild(linkInput);
 
     let airENLabel = document.createElement('label');
     airENLabel.htmlFor = stream + "AirEN" + index;
     airENLabel.textContent = "Air date (EN):";
     let airENInput = document.createElement('input');
     airENInput.name = stream + "AirEN" + index;
-    airENInput.type = "date";
+    airENInput.type = "datetime-local";
     episodeArea.appendChild(airENLabel);
     episodeArea.appendChild(airENInput);
 
@@ -153,7 +147,7 @@ function buildEpisodeForm(stream, index){
     airJPLabel.textContent = "Air date (JP):";
     let airJPInput = document.createElement('input');
     airJPInput.name = stream + "AirJP" + index;
-    airJPInput.type = "date";
+    airJPInput.type = "datetime-local";
     episodeArea.appendChild(airJPLabel);
     episodeArea.appendChild(airJPInput);
 
@@ -217,33 +211,22 @@ document.getElementById("series").addEventListener("submit", function(event){
     let series = new animeSeries(mID, title, link, imageLink, currentSeason, broadcastDay, episodes);
     postSeries(series);
 });
-//Get episodes array for each stream
-function buildStreamForm(stream,numberEpisodes){
-    let streamEl = document.getElementById(stream + "Stream");
-    document.querySelectorAll('.' + stream).forEach(epList => epList.remove());
-    for (let i = 0; i < numberEpisodes; i++){
-        let episodeEl = buildEpisodeForm(stream, i);
-        streamEl.appendChild(episodeEl);
-    }
-}
 //Fill in episodes array data
 function fillOutEpisodes(stream){
     let episodes = new Array();
     let numEpisodes = document.querySelector("[name='" + stream + "Ep']").value;
     for(let index = 0; index < numEpisodes; index++){
-        let num = document.querySelector("[name='" + stream + "Num" + index + "']");
-        let title = document.querySelector("[name='" + stream + "Title" + index + "']");
-        let linkEN = document.querySelector("[name='" + stream + "LnkEN" + index + "']");
-        let linkJP = document.querySelector("[name='" + stream + "LnkJP" + index + "']");
-        let imageLink;
-        let airEN = document.querySelector("[name='" + stream + "AirEN" + index + "']");
-        let airJP = document.querySelector("[name='" + stream + "AirJP" + index + "']");
-        episodes.push(new episode(stream, num, title, linkEN, linkJP, imageLink, airEN, airJP))
+        let num = document.querySelector("[name='" + stream + "Num" + index + "']").value;
+        let title = document.querySelector("[name='" + stream + "Title" + index + "']").value;
+        let link = document.querySelector("[name='" + stream + "Link" + index + "']").value;
+        let airEN = document.querySelector("[name='" + stream + "AirEN" + index + "']").value;
+        let airJP = document.querySelector("[name='" + stream + "AirJP" + index + "']").value;
+        episodes.push(new episode(stream, num, title, link, airEN, airJP))
     }
     return episodes;
 }
 //Should write information to data, but cannot access data
 function postSeries(series){
-    console.log(series);
+    console.log(JSON.stringify(series));
     //lack permissions for write to file...
 }
