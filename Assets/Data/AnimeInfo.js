@@ -1,4 +1,4 @@
-var animeData = [newArray(), newArray(), newArray(), newArray(), newArray(), newArray(), newArray()];
+var animeData = [new Array(), new Array(), new Array(), new Array(), new Array(), new Array(), new Array()];
 
 //////////
 //Monday//

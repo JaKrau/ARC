@@ -45,7 +45,6 @@ class episode{
     episode;        //integer
     title;          //string episode title
     link;           //language class links to different episodes
-    imageLink;      //string link to episode thumbnail
     airDate;        //language class air dates by version
     constructor(streamService, episode, title, link, airDubEn, airSubtitle){
         this.streamService = streamService
