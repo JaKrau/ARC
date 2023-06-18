@@ -12,13 +12,13 @@ DataStructure
 ---episodeNumber
 ---episodeTitle
 ---episodeLink[] == By Streaming Service
-----japanese
-----english
+----subtitle
+----dubEn
 ---episodeSummary == Might be able to handle through API request
 ---episodeImage
 ---episodeAirDate
-----japanese
-----english
+----subtitle
+----dubEn
 */
 
 class animeSeries{
@@ -45,49 +45,66 @@ class episode{
     episode;        //integer
     title;          //string episode title
     link;           //language class links to different episodes
-    imageLink;      //string link to episode thumbnail
     airDate;        //language class air dates by version
-    constructor(streamService, episode, title, linkEnglish, linkJapanese, imageLink, airEnglish, airJapanese){
+    constructor(streamService, episode, title, link, airDubEn, airSubtitle){
         this.streamService = streamService
         this.episode = episode;
         this.title = title;
-        this.link = new language(linkEnglish, linkJapanese);
-        this.imageLink = imageLink;
-        this.airDate = new language(airEnglish, airJapanese);
+        this.link = link;
+        this.airDate = new language(airDubEn, airSubtitle);
     }
 }
 
 class language{
-    english;        //English version
-    japanese;       //Japanese version
-    constructor(english, japanese){
-        this.english = english;
-        this.japanese = japanese;
+    dubEn;        //DubEn version
+    subtitle;       //Subtitle version
+    constructor(dubEn, subtitle){
+        this.dubEn = dubEn;
+        this.subtitle = subtitle;
     }
 }
-
+//Repeated document queries
+var crunchyRollCheckEl = document.querySelector("[name='crunchyRoll']");
+var hiDiveCheckEl = document.querySelector("[name='hiDive']");
+var netflixCheckEl = document.querySelector("[name='netflix']");
+var crunchyRollEpEl = document.querySelector("[name='crunchyRollEp']");
+var hiDiveEpEl = document.querySelector("[name='hiDiveEp']");
+var netflixEpEl = document.querySelector("[name='netflixEp']");
 
 /* sample HTML
+<div id="crunchyRollDiv0" class="crunchyRoll">...</div>
+<div id="crunchyRollDiv2" class="crunchyRoll">...</div>
+...
+<div id="crunchyRollDiv{numberEpisodes}" class="crunchyRoll">...</div>
+*/
+function buildStreamForm(stream,numberEpisodes){
+    let streamEl = document.getElementById(stream + "Stream");
+    document.querySelectorAll('.' + stream).forEach(epList => epList.remove());
+    for (let i = 0; i < numberEpisodes; i++){
+        let episodeEl = buildEpisodeForm(stream, i);
+        streamEl.appendChild(episodeEl);
+    }
+}
+/* sample HTML
 Crunchyroll Episodes
-                <label for="crunchyEpNum{#}">Episode: </label>
-                    <input type="number" name="crunchyEpNum{#}"/>
-                <label for="crunchyEpTitle{#}">Title: </label>
-                    <input type="text" name="crunchyEpTitle{#}"/>
-                <label for="crunchyEpLnkEN{#}">Link(EN): </label>
-                    <input type="url" name="crunchyEpLnkEN{#}"/>
-                <label for="crunchyEpLnkJP{#}">Link(JP): </label>
-                    <input type="url" name="crunchyEpLnkJP{#}"/>
-                <label for="crunchyEpLnkImg{#}">Thumbnail Link: </label>
-                    <input type="url" name="crunchyEpLnkImg{#}"/>
-                <label for="crunchyEpAirEN{#}">Air date(EN): </label>
-                    <input type="date" name="crunchyEpAirEN{#}"/>
-                <label for="crunchyEpAirJP{#}">Air date(JP): </label>
-                    <input type="date" name="crunchyEpAirJP{#}"/>
+<div id="crunchyRollDiv{#}" class="crunchyRoll">
+    <label for="crunchyRollNum{#}">Episode: </label>
+        <input type="number" name="crunchyEpNum{#}"/>
+    <label for="crunchyRollTitle{#}">Title: </label>
+        <input type="text" name="crunchyEpTitle{#}"/>
+    <label for="crunchyRollLink{#}">Stream Link: </label>
+        <input type="url" name="crunchyEpLnkEN{#}"/>
+    <label for="crunchyRollAirDubEN{#}">Air date(DUB): </label>
+        <input type="datetime-local" name="crunchyEpAirDubEN{#}"/>
+    <label for="crunchyRollAirSubtitle{#}">Air date(SUB): </label>
+        <input type="datetime-local" name="crunchyEpAirSubtitle{#}"/>
+</div>
 */
 function buildEpisodeForm(stream, index){
     let episodeArea = document.createElement('div')
-    episodeArea.id = stream + "EP" + index;
+    episodeArea.id = stream + "Div" + index;
     episodeArea.className = stream;
+
     let epLabel = document.createElement('label');
     epLabel.htmlFor = stream + "Num" + index;
     epLabel.textContent = "Episode Number:";
@@ -106,134 +123,72 @@ function buildEpisodeForm(stream, index){
     episodeArea.appendChild(titleLabel);
     episodeArea.appendChild(titleInput);
 
-    let lnkENLabel = document.createElement('label');
-    lnkENLabel.htmlFor = stream + "LnkEN" + index;
-    lnkENLabel.textContent = "Stream Link(EN):";
-    let lnkENInput = document.createElement('input');
-    lnkENInput.name = stream + "LnkEN" + index;
-    lnkENInput.type = "url";
-    episodeArea.appendChild(lnkENLabel);
-    episodeArea.appendChild(lnkENInput);
+    let linkLabel = document.createElement('label');
+    linkLabel.htmlFor = stream + "Link" + index;
+    linkLabel.textContent = "Stream Link:";
+    let linkInput = document.createElement('input');
+    linkInput.name = stream + "Link" + index;
+    linkInput.type = "url";
+    episodeArea.appendChild(linkLabel);
+    episodeArea.appendChild(linkInput);
 
-    let lnkJPLabel = document.createElement('label');
-    lnkJPLabel.htmlFor = stream + "LnkJP" + index;
-    lnkJPLabel.textContent = "Stream Link(JP):";
-    let lnkJPInput = document.createElement('input');
-    lnkJPInput.name = stream + "LnkJP" + index;
-    lnkJPInput.type = "url";
-    episodeArea.appendChild(lnkJPLabel);
-    episodeArea.appendChild(lnkJPInput);
+    let airDubENLabel = document.createElement('label');
+    airDubENLabel.htmlFor = stream + "AirDubEN" + index;
+    airDubENLabel.textContent = "Air date (DUB):";
+    let airDubENInput = document.createElement('input');
+    airDubENInput.name = stream + "AirDubEN" + index;
+    airDubENInput.type = "datetime-local";
+    episodeArea.appendChild(airDubENLabel);
+    episodeArea.appendChild(airDubENInput);
 
-    let lnkImgLabel = document.createElement('label');
-    lnkImgLabel.htmlFor = stream + "LnkImg" + index;
-    lnkImgLabel.textContent = "Thumbnail Link:";
-    let lnkImgInput = document.createElement('input');
-    lnkImgInput.name = stream + "LnkImg" + index;
-    lnkImgInput.type = "url";
-    episodeArea.appendChild(lnkImgLabel);
-    episodeArea.appendChild(lnkImgInput);
-
-    let airENLabel = document.createElement('label');
-    airENLabel.htmlFor = stream + "AirEN" + index;
-    airENLabel.textContent = "Air date (EN):";
-    let airENInput = document.createElement('input');
-    airENInput.name = stream + "AirEN" + index;
-    airENInput.type = "date";
-    episodeArea.appendChild(airENLabel);
-    episodeArea.appendChild(airENInput);
-
-    let airJPLabel = document.createElement('label');
-    airJPLabel.htmlFor = stream + "AirJP" + index;
-    airJPLabel.textContent = "Air date (JP):";
-    let airJPInput = document.createElement('input');
-    airJPInput.name = stream + "AirJP" + index;
-    airJPInput.type = "date";
-    episodeArea.appendChild(airJPLabel);
-    episodeArea.appendChild(airJPInput);
+    let airSubtitleLabel = document.createElement('label');
+    airSubtitleLabel.htmlFor = stream + "AirSubtitle" + index;
+    airSubtitleLabel.textContent = "Air date (SUB):";
+    let airSubtitleInput = document.createElement('input');
+    airSubtitleInput.name = stream + "AirSubtitle" + index;
+    airSubtitleInput.type = "datetime-local";
+    episodeArea.appendChild(airSubtitleLabel);
+    episodeArea.appendChild(airSubtitleInput);
 
     return episodeArea;
 }
 
-function buildStreamForm(stream,numberEpisodes){
-    let streamEl = document.getElementById(stream + "Stream");
-    document.querySelectorAll('.' + stream).forEach(epList => epList.remove());
-    for (let i = 0; i < numberEpisodes; i++){
-        let episodeEl = buildEpisodeForm(stream, i);
-        streamEl.appendChild(episodeEl);
-    }
-}
-
-function fillOutEpisodes(stream){
-    let episodes = new Array();
-    let numEpisodes = document.querySelector("[name='" + stream + "Ep']").value;
-    for(let index = 0; index < numEpisodes; index++){
-        let num = document.querySelector("[name='" + stream + "Num" + index + "']");
-        let title = document.querySelector("[name='" + stream + "Title" + index + "']");
-        let linkEN = document.querySelector("[name='" + stream + "LnkEN" + index + "']");
-        let linkJP = document.querySelector("[name='" + stream + "LnkJP" + index + "']");
-        let imageLink;
-        let airEN = document.querySelector("[name='" + stream + "AirEN" + index + "']");
-        let airJP = document.querySelector("[name='" + stream + "AirJP" + index + "']");
-        episodes.push(new episode(stream, num, title, linkEN, linkJP, imageLink, airEN, airJP))
-    }
-    return episodes;
-}
-async function postSeries(series){
-    try{
-        const response = await fetch("../Assets/Data/AnimeSeries.data", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(series),
-        });
-
-        const result = await response.json();
-        console.log("Success: ", result);
-    }
-    catch(error){
-        console.log("Error", error);
-    }
-}
-
-var crunchyRollCheckEl = document.querySelector("[name='crunchyRoll']");
-var hiDiveCheckEl = document.querySelector("[name='hiDive']");
-var netflixCheckEl = document.querySelector("[name='netflix']");
-var crunchyRollEpEl = document.querySelector("[name='crunchyRollEp']");
-var hiDiveEpEl = document.querySelector("[name='hiDiveEp']");
-var netflixEpEl = document.querySelector("[name='netflixEp']");
-
-crunchyRollCheckEl.addEventListener('change', function(){
-    let numEpisodes = crunchyRollEpEl.value;
-    buildStreamForm("crunchyRoll",numEpisodes);
-});
-hiDiveCheckEl.addEventListener('change', function(){
-    let numEpisodes = hiDiveEpEl.value;
-    buildStreamForm("hiDive",numEpisodes);
-});
-netflixCheckEl.addEventListener('change', function(){
-    let numEpisodes = netflixEpEl.value;
-    buildStreamForm("netflix",numEpisodes);
-});
-crunchyRollEpEl.addEventListener('change', function(){
+//Event listeners to change how many episodes there are
+crunchyRollCheckEl.addEventListener('change', crunchyRollBuildEpisodesEvent);
+crunchyRollEpEl.addEventListener('change', crunchyRollBuildEpisodesEvent);
+function crunchyRollBuildEpisodesEvent(){
     if(crunchyRollCheckEl.checked === true){
         let numEpisodes = crunchyRollEpEl.value;
         buildStreamForm("crunchyRoll",numEpisodes);
     }
-});
-hiDiveEpEl.addEventListener('change', function(){
+    else{
+        buildStreamForm("crunchyRoll", 0);
+    }
+}
+hiDiveCheckEl.addEventListener('change', hiDiveBuildEpisodesEvent);
+hiDiveEpEl.addEventListener('change', hiDiveBuildEpisodesEvent);
+function hiDiveBuildEpisodesEvent(){
     if(hiDiveCheckEl.checked === true){
         let numEpisodes = hiDiveEpEl.value;
         buildStreamForm("hiDive",numEpisodes);
     }
-});
-netflixEpEl.addEventListener('change', function(){
+    else{
+        buildStreamForm("hiDive", 0);
+    }
+}
+netflixCheckEl.addEventListener('change', netflixBuildEpisodesEvent);
+netflixEpEl.addEventListener('change', netflixBuildEpisodesEvent);
+function netflixBuildEpisodesEvent(){
     if(netflixCheckEl.checked === true){
         let numEpisodes = netflixEpEl.value;
         buildStreamForm("netflix",numEpisodes);
     }
-});
+    else{
+        buildStreamForm("netflix", 0);
+    }
+}
 
+//Form Event submit sequence
 document.getElementById("series").addEventListener("submit", function(event){
     event.preventDefault();
     let mID = document.querySelector("[name='mID']").value;
@@ -243,15 +198,34 @@ document.getElementById("series").addEventListener("submit", function(event){
     let currentSeason = document.querySelector("[name='currentSeason']").value;
     let broadcastDay = document.querySelector("[name='broadcastDay']").value;
     let episodes = new Array();
-    if(document.querySelector("[name='crunchyRoll']").checked === true){
+    if(crunchyRollCheckEl.checked === true){
         episodes.push(fillOutEpisodes("crunchyRoll"))
     }
-    if(document.querySelector("[name='hiDive']").checked === true){
+    if(hiDiveCheckEl.checked === true){
         episodes.push(fillOutEpisodes("hiDive"))
     }
-    if(document.querySelector("[name='netflix']").checked === true){
+    if(netflixCheckEl.checked === true){
         episodes.push(fillOutEpisodes("netflix"))
     }
     let series = new animeSeries(mID, title, link, imageLink, currentSeason, broadcastDay, episodes);
     postSeries(series);
 });
+//Fill in episodes array data
+function fillOutEpisodes(stream){
+    let episodes = new Array();
+    let numEpisodes = document.querySelector("[name='" + stream + "Ep']").value;
+    for(let index = 0; index < numEpisodes; index++){
+        let num = document.querySelector("[name='" + stream + "Num" + index + "']").value;
+        let title = document.querySelector("[name='" + stream + "Title" + index + "']").value;
+        let link = document.querySelector("[name='" + stream + "Link" + index + "']").value;
+        let airDubEN = document.querySelector("[name='" + stream + "AirDubEN" + index + "']").value;
+        let airSubtitle = document.querySelector("[name='" + stream + "AirSubtitle" + index + "']").value;
+        episodes.push(new episode(stream, num, title, link, airDubEN, airSubtitle))
+    }
+    return episodes;
+}
+//Should write information to data, but cannot access data
+function postSeries(series){
+    console.log(JSON.stringify(series));
+    //lack permissions for write to file...
+}

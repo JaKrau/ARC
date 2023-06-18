@@ -28,36 +28,34 @@
             <label for="crunchyRoll">CrunchyRoll</label>
                 <input type="checkbox" name="crunchyRoll"/>
             <label for="crunchyRollEp">Episodes</label>
-                <input type="range" name="crunchyRollEp" id="crunchyRollEp" min="0" max="6" value="0"/>
+                <input type="range" name="crunchyRollEp" id="crunchyRollEp" min="1" max="6" value="1"/>
                 <!-- Sample Generate from JavaScript
                     Crunchyroll Episodes
-                    <label for="crunchyEpNum{#}">Episode: </label>
-                        <input type="number" name="crunchyEpNum{#}"/>
-                    <label for="crunchyEpTitle{#}">Title: </label>
-                        <input type="text" name="crunchyEpTitle{#}"/>
-                    <label for="crunchyEpLnkEN{#}">Link(EN): </label>
-                        <input type="url" name="crunchyEpLnkEN{#}"/>
-                    <label for="crunchyEpLnkJP{#}">Link(JP): </label>
-                        <input type="url" name="crunchyEpLnkJP{#}"/>
-                    <label for="crunchyEpLnkImg{#}">Thumbnail Link: </label>
-                        <input type="url" name="crunchyEpLnkImg{#}"/>
-                    <label for="crunchyEpAirEN{#}">Air date(EN): </label>
-                        <input type="date" name="crunchyEpAirEN{#}"/>
-                    <label for="crunchyEpAirJP{#}">Air date(JP): </label>
-                        <input type="date" name="crunchyEpAirJP{#}"/>
+                    <div id="crunchyRollDiv{#}" class="crunchyRoll">
+                        <label for="crunchyRollNum{#}">Episode: </label>
+                            <input type="number" name="crunchyEpNum{#}"/>
+                        <label for="crunchyRollTitle{#}">Title: </label>
+                            <input type="text" name="crunchyEpTitle{#}"/>
+                        <label for="crunchyRollLink{#}">Stream Link: </label>
+                            <input type="url" name="crunchyEpLnkEN{#}"/>
+                        <label for="crunchyRollAirDubEN{#}">Air date(DUB): </label>
+                            <input type="datetime-local" name="crunchyEpAirDubEN{#}"/>
+                        <label for="crunchyRollAirSubtitle{#}">Air date(SUB): </label>
+                            <input type="datetime-local" name="crunchyEpAirSubtitle{#}"/>
+                    </div>
                 -->
         </div>
         <div id="hiDiveStream">
         <label for="hiDive">HiDive</label>
             <input type="checkbox" name="hiDive"/>
         <label for="hiDiveEp">Episodes</label>
-            <input type="range" name="hiDiveEp" id="hiDiveEp" min="0" max="6" value="0"/>
+            <input type="range" name="hiDiveEp" id="hiDiveEp" min="1" max="6" value="1"/>
         </div>
         <div id="netflixStream">
         <label for="netflix">Netflix</label>
             <input type="checkbox" name="netflix"/>
         <label for="netflixEp">Episodes</label>
-            <input type="range" name="netflixEp" id="netflixEp" min="0" max="6" value="0"/>
+            <input type="range" name="netflixEp" id="netflixEp" min="1" max="6" value="1"/>
         </div>
         <input type="submit"/>
         <input type="reset"/>

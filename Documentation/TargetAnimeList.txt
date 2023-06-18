@@ -1,68 +1,85 @@
 ((Source: MyAnimeList - https://myanimelist.net/anime/season/schedule))
+((Source: CrunchyRoll - https://www.crunchyroll.com/simulcastcalendar?date=2023-06-05))
+((Source: HiDive - https://www.hidive.com/jun-2023-release-schedule))
+((Source: Netflix - https//www.netflix.com))
 ==Monday==
-In Another World with a Smartphone 2 (Crunchyroll)
-The Aristocrat's Otherworldy Adventure: Serving Gods (Crunchyroll)
-The Reason Why Raeliana Ended up at the Duke's Mansion (Crunchyroll)
+[Isekai wa Smartphone to Tomo ni. 2] In Another World with a Smartphone 2 (Crunchyroll)
+[Kanojo ga Koushaku-tei ni Itta Riyuu] The Reason Why Raeliana Ended up at the Duke's Mansion (Crunchyroll) --Dub/Sub same episode
 Golden Kamuy Season 4 (Crunchyroll, Funimation)
 Kuma Kuma Bear Punch! (Crunchyroll, Funimation)
-
-==Tuesday==
 Vinland Saga Season 2 (Crunchyroll, Netflix)
-Skip to Loader (Crunchyroll)
-Kubo Won't Let Me Be Invisible (HiDive)
-Insomniacs After School (HiDive)
 Dead Mount Death Play (Crunchyroll)
-Ayakashi Triangle (Crunchyroll)
-Kizuna no Allele (Crunchyroll)
+Kizuna no Allele (Crunchyroll) --sub only
+[Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta] I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too (Crunchyroll)
+[Kimi wa Houkago Insomnia] Insomniacs After School (HiDive)
 Alice Gear Aegis Expansion (HiDive)
 
-==Wedesday==
-Oshi No Ko (HiDive)
-The Marginal Service (Crunchyroll)
+==Tuesday==
+Skip and Loafer (Crunchyroll) --sub only
+The Marginal Service (Crunchyroll) --sub only
+X&Y (CrunchyRoll) --sub only --mandarin --no animeInfo
 Tokyo Mew Mew New ♡ 2nd Season (HiDive)
-Sorcerous Stabber Orphen -Doom of Dragon's Sanctuary- (Crunchyroll)
+[Kubo-san wa Mob wo Yurusanai]Kubo Won't Let Me Be Invisible (HiDive)
+
+==Wednesday==
+[Majutsushi Orphen Hagure Tabi: Seiiki-hen] Sorcerous Stabber Orphen -Doom of Dragon's Sanctuary- (Crunchyroll) --sub only
+[Kono Subarashii Sekai ni Bakuen wo!] KonoSuba: An Explosion on This Wonderful World! (Crunchyroll)
+[Kaminaki Sekai no Kamisama Katsudou] KamiKatsu: Working for God in a Godless World (Crunchyroll)
+[Niehime to Kemono no Ou] Sacrificial Princess and the King of Beasts (Crunchyroll)
+The IDOLM@STER Cinderella Girls: U149 (Crunchyroll) --sub only
+Oshi No Ko (HiDive)
+Urusei Yatsura (HiDive) --dub only
 
 ==Thursday==
 Dr. Stone: New World (Crunchyroll, Funimation)
-KonoSuba: An Explosion on This Wonderful World! (Crunchyroll)
-The Ancient Magus' Bride Season 2 (Crunchyroll)
-KamiKatsu: Working for God in a Godless World (Crunchyroll)
-Yuri is My Job! (Crunchyroll)
-Sacrificial Princess and the King of Beasts (Crunchyroll)
-The IDOLM@STER Cinderella Girls: U149 (Crunchyroll)
+[Mahoutsukai no Yome Season 2] The Ancient Magus' Bride Season 2 (Crunchyroll)
+[Watashi no Yuri wa Oshigoto desu!] Yuri is My Job! (Crunchyroll) --sub only
+[Ousama Ranking: Yuuki no Takarabako] Ranking of Kings: The Treasure Chest of Courage (Crunchyroll)
+[Yuusha ga Shinda!] The Legendary Hero Is Dead! (Crunchyroll)
+Opus.COLORs (Crunchyroll) --sub only
+[Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka IV: Fuka Shou - Yakusai-hen] Is It Wrong to Try to Pick Up Girls in a Dungeon? IV Part 2 (HiDive) --dub only
+[Isekai Nonbiri Nouka] Farming Life in Another World (HiDive) --dub only
+Chiikawa (HiDive) --sub only
 
 ==Friday==
-I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too (Crunchyroll)
-Ranking of Kings: The Treasure Chest of Courage (Crunchyroll)
-The Legendary Hero Is Dead! (Crunchyroll)
-Too Cute Crisis (HiDive)
-Opus.COLORs (Crunchyroll)
-
-==Saturday==
-[Jigokuraku] Hell's Paradise (Crunchyroll, Netflix)
 Mashle: Magic and Muscles (Crunchyroll)
-[Tengoku Daimakyou] Heavenly Delusion (Disney+) --Probably can't use
-[Tonikaku Kawaii 2nd Season] TONIKAWA: Over The Moon For You Season 2 (Crunchyroll)
-[Megami no Café Terrace] The Café Terrace and Its Goddesses (Crunchyroll)
-[Isekai One Turn Kill Neesan: Ane Douhan no Isekai Seikatsu Hajimemashita] My One-Hit Kill Sister (Crunchyroll)
-[Mahou Shoujo Magical Destroyers] Magical Destroyers (Crunchyroll)
-[Edomae Elf] Otaku Elf (HiDive)
-[Rokudou no Onna-tachi] Rokudo's Bad Girls (Crunchyroll)
-Birdie Wing: Golf Girls' Story Season 2 (Crunchyroll)
-[Mix: Meisei Story 2nd Season - Nidome no Natsu, Sora no Mukou e] MIX Season 2 (Crunchyroll, Funimation)
+[Tonikaku Kawaii 2nd Season] TONIKAWA: Over The Moon For You Season 2 (Crunchyroll) --Dub/Sub same episode
+[Megami no Café Terrace] The Café Terrace and Its Goddesses (Crunchyroll) --sub only
+[Isekai One Turn Kill Neesan: Ane Douhan no Isekai Seikatsu Hajimemashita] My One-Hit Kill Sister (Crunchyroll) --sub only
+[Mahou Shoujo Magical Destroyers] Magical Destroyers (Crunchyroll) --sub only
+[Rokudou no Onna-tachi] Rokudo's Bad Girls (Crunchyroll) --sub only
+Birdie Wing: Golf Girls' Story Season 2 (Crunchyroll) --sub only
+[Kawaisugi Crisis] Too Cute Crisis (HiDive) --sub only
+[Edomae Elf] Otaku Elf (HiDive) --sub only
+
+==Saurday==
+[Jigokuraku] Hell's Paradise (Crunchyroll)
+[Mix: Meisei Story 2nd Season - Nidome no Natsu, Sora no Mukou e] MIX Season 2 (Crunchyroll, Funimation) --sub only
+One Piece (Crunchyroll, Funimation) --sub only
+[Yamada-kun to Lv999 no Koi wo Suru] My Love Story with Yamada-kun at Lv999 (Crunchyroll) --sub only
+[Isekai Shoukan wa Nidome desu] Summoned to Another World for a Second Time (Crunchyroll) --sub only
+[Otonari ni Ginga] A Galaxy Next Door (Crunchyroll)
+Edens Zero 2nd Season (Crunchyroll) --sub only
+[Hirogaru Sky! Precure] Soaring Sky! Pretty Cure (Crunchyroll) --sub only
+Detective Conan Case Closed (Crunchyroll) --sub only
+Bastions (Crunchyroll) -dub only
+[Utawarerumono: Futari no Hakuoro] Utawarerumono: Mask of Truth (Crunchyroll) -dub only
+[Boku no Kokoro no Yabai Yatsu] The Dangers in My Heart (HiDive) --sub only
 
 ==Sunday==
-One Piece (Crunchyroll, Funimation)
 [Kimetsu no Yaiba: Katanakaji no Sato-hen] Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc (Crunchyroll)
-[Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou II] The Misfit of Demon King Academy Ⅱ (Crunchyroll)
-[Yamada-kun to Lv999 no Koi wo Suru] My Love Story with Yamada-kun at Lv999 (Crunchyroll)
-NieR:Automata Ver1.1a (Crunchyroll)
-[Boku no Kokoro no Yabai Yatsu] The Dangers in My Heart (HiDive)
-[Isekai Shoukan wa Nidome desu] Summoned to Another World for a Second Time (Crunchyroll)
 My Home Hero (Crunchyroll)
-[Otonari ni Ginga] A Galaxy Next Door (Crunchyroll)
 [Kidou Senshi Gundam: Suisei no Majo Season 2] Mobile Suit Gundam: The Witch from Mercury Season 2 (Crunchyroll)
-Edens Zero 2nd Season (Crunchyroll)
 [Jijou wo Shiranai Tenkousei ga Guigui Kuru.] My Clueless First Friend (Crunchyroll)
-[World Dai Star] Stella of the Theater: World Dai Star (Crunchyroll)
-[Hirogaru Sky! Precure] Soaring Sky! Pretty Cure (Crunchyroll)
+[World Dai Star] Stella of the Theater: World Dai Star (Crunchyroll) --sub only
+[Tensei Kizoku no Isekai Boukenroku: Jichou wo Shiranai Kamigami no Shito] The Aristocrat's Otherworldly Adventure: Serving Gods Who Go Too Far (Crunchyroll)
+[Kyokou Suiri Season 2] In/Spectre 2 (CrunchyRoll) --dub only
+[Karakai Jouzu no Takagi-san Movie] Teasing Master Takagi-san: The Movie (HiDive) --sub only
+[Tsurune Movie: Hajimari no Issha] Tsurune the Movie - The First Shot (HiDive) --sub only
+[Kaitou Queen wa Circus ga Osuki] Mirage QUEEN Prefers Circus (HiDive) --sub only
+
+==Other==
+[Tengoku Daimakyou] Heavenly Delusion (Disney+) --Probably can't use
+Ayakashi Triangle (Crunchyroll) -- Series Ended
+NieR:Automata Ver1.1a (Crunchyroll) -- Series Ended
+[Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou II] The Misfit of Demon King Academy Ⅱ (Crunchyroll) -- Series Ended
