@@ -140,32 +140,41 @@ animeData[4].push(JSON.parse('{"mID":"52081","title":"Otaku Elf","link":"https:/
 ////////////
 //Saturday//
 ////////////
-//[Jigokuraku] Hell's Paradise (Crunchyroll, Netflix)
-animeData[5].push(JSON.parse(''));
+//[Jigokuraku] Hell's Paradise (Crunchyroll)
+animeData[5].push(JSON.parse('{"mID":"46569","title":"Hells Paradise","link":"https://myanimelist.net/anime/46569/Jigokuraku","imageLink":"https://cdn.myanimelist.net/images/anime/1075/131925.jpg","currentSeason":"1","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"9","title":"Gods and People","link":"https://www.crunchyroll.com/watch/G9DUEG3JZ/gods-and-people","airDate":{"dubEn":"2023-06-17T14:00","subtitle":"2023-06-03T08:30"}},{"streamService":"crunchyRoll","episode":"10","title":"Yin and Yang","link":"https://www.crunchyroll.com/watch/GPWUKDN4N/yin-and-yang","airDate":{"dubEn":"2023-06-24T14:00","subtitle":"2023-06-10T08:30"}},{"streamService":"crunchyRoll","episode":"11","title":"Weak and Strong","link":"https://www.crunchyroll.com/watch/G2XU0DXW1/weak-and-strong","airDate":{"dubEn":"2023-07-01T14:00","subtitle":"2023-06-17T08:30"}}]]}'));
 
-//[Mix: Meisei Story 2nd Season - Nidome no Natsu, Sora no Mukou e] MIX Season 2 (Crunchyroll, Funimation)
-animeData[5].push(JSON.parse(''));
+//[Mix: Meisei Story 2nd Season - Nidome no Natsu, Sora no Mukou e] MIX Season 2 (Crunchyroll, Funimation) --sub only
+animeData[5].push(JSON.parse('{"mID":"52614","title":"Mix: Meisei Story ","link":"https://myanimelist.net/anime/52614/Mix__Meisei_Story_2nd_Season_-_Nidome_no_Natsu_Sora_no_Mukou_e","imageLink":"https://cdn.myanimelist.net/images/anime/1401/135271.jpg","currentSeason":"2","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"12","title":"Hes Calling You","link":"https://www.crunchyroll.com/watch/GEVUZNJ48/hes-calling-you","airDate":{"dubEn":"","subtitle":"2023-06-17T03:00"}}]]}'));
 
-//One Piece (Crunchyroll, Funimation)
-animeData[5].push(JSON.parse(''));
+//One Piece (Crunchyroll, Funimation) --sub only
+animeData[5].push(JSON.parse('{"mID":"21","title":"One Piece","link":"https://myanimelist.net/anime/21/One_Piece","imageLink":"https://cdn.myanimelist.net/images/anime/6/73245.jpg","currentSeason":"13","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"1065","title":"The Destruction of the Alliance?!　Fire up, the Will of the New Generation!","link":"https://www.crunchyroll.com/watch/GN7UDVXV5/the-destruction-of-the-alliancefire-up-the-will-of-the-new-generation","airDate":{"dubEn":"","subtitle":"2023-06-10T19:00"}}]]}'));
 
-//[Yamada-kun to Lv999 no Koi wo Suru] My Love Story with Yamada-kun at Lv999 (Crunchyroll)
-animeData[5].push(JSON.parse(''));
+//[Yamada-kun to Lv999 no Koi wo Suru] My Love Story with Yamada-kun at Lv999 (Crunchyroll) --sub only
+animeData[5].push(JSON.parse('{"mID":"53126","title":"My Love Story with Yamada-kun at Lv999","link":"https://myanimelist.net/anime/53126/Yamada-kun_to_Lv999_no_Koi_wo_Suru","imageLink":"https://cdn.myanimelist.net/images/anime/1298/134178.jpg","currentSeason":"1","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"12","title":"I Like You","link":"https://www.crunchyroll.com/watch/GJWU2ENGZ/i-like-you","airDate":{"dubEn":"","subtitle":"2023-06-17T10:00"}}]]}'));
 
-//[Isekai Shoukan wa Nidome desu] Summoned to Another World for a Second Time (Crunchyroll)
-animeData[5].push(JSON.parse(''));
+//[Isekai Shoukan wa Nidome desu] Summoned to Another World for a Second Time (Crunchyroll) --sub only
+animeData[5].push(JSON.parse('{"mID":"50220","title":"Summoned to Another World for a Second Time","link":"https://myanimelist.net/anime/50220/Isekai_Shoukan_wa_Nidome_desu","imageLink":"https://cdn.myanimelist.net/images/anime/1387/134151.jpg","currentSeason":"1","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"11","title":"Going All-In for a Second Time","link":"https://www.crunchyroll.com/watch/GN7UDVJ07/going-all-in-for-a-second-time","airDate":{"dubEn":"","subtitle":"2023-06-17T11:45"}}]]}'));
 
 //[Otonari ni Ginga] A Galaxy Next Door (Crunchyroll)
-animeData[5].push(JSON.parse(''));
+animeData[5].push(JSON.parse('{"mID":"51705","title":"A Galaxy Next Door","link":"https://myanimelist.net/anime/51705/Otonari_ni_Ginga","imageLink":"https://cdn.myanimelist.net/images/anime/1091/135041.jpg","currentSeason":"1","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"9","title":"A Hot Spring with the Princess","link":"https://www.crunchyroll.com/watch/GK9U3DXJP/a-hot-spring-with-the-princess","airDate":{"dubEn":"2023-06-17T14:00","subtitle":"2023-06-03T11:00"}},{"streamService":"crunchyRoll","episode":"10","title":"Family Meeting with the Princess","link":"https://www.crunchyroll.com/watch/G0DUNJXEN/family-meeting-with-the-princess","airDate":{"dubEn":"2023-06-24T14:00","subtitle":"2023-06-10T11:00"}},{"streamService":"crunchyRoll","episode":"11","title":"Stinger Removal with Kuga-Kun","link":"https://www.crunchyroll.com/watch/GEVUZNQVW/stinger-removal-with-kuga-kun","airDate":{"dubEn":"2023-07-01T14:00","subtitle":"2023-06-17T11:00"}}]]}'));
 
-//Edens Zero 2nd Season (Crunchyroll)
-animeData[5].push(JSON.parse(''));
+//Edens Zero 2nd Season (Crunchyroll) --sub only
+animeData[5].push(JSON.parse('{"mID":"50002","title":"Edens Zero","link":"https://myanimelist.net/anime/50002/Edens_Zero_2nd_Season","imageLink":"https://cdn.myanimelist.net/images/anime/1687/133670.jpg","currentSeason":"2","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"37","title":"Clash of the Cosmos","link":"https://www.crunchyroll.com/watch/GD9UV8GE3/clash-of-the-cosmos","airDate":{"dubEn":"","subtitle":"2023-06-17T09:55"}}]]}'));
 
-//[Hirogaru Sky! Precure] Soaring Sky! Pretty Cure (Crunchyroll)
-animeData[5].push(JSON.parse(''));
+//[Hirogaru Sky! Precure] Soaring Sky! Pretty Cure (Crunchyroll) --sub only
+animeData[5].push(JSON.parse('{"mID":"53716","title":"Soaring Sky! Pretty Cure","link":"https://myanimelist.net/anime/53716/Hirogaru_Sky_Precure","imageLink":"https://cdn.myanimelist.net/images/anime/1762/135268.jpg","currentSeason":"1","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"19","title":"Ageha and Tsubasa Get Colorfully Excited!","link":"https://www.crunchyroll.com/watch/G2XU0DW4D/ageha-and-tsubasa-get-colorfully-excited","airDate":{"dubEn":"","subtitle":"2023-06-10T18:30"}}]]}'));
 
-//[Boku no Kokoro no Yabai Yatsu] The Dangers in My Heart (HiDive)
-animeData[5].push(JSON.parse(''));
+//Detective Conan Case Closed (Crunchyroll) --sub only
+animeData[5].push(JSON.parse('{"mID":"235","title":"Detective Conan Case Closed","link":"https://myanimelist.net/anime/235/Detective_Conan","imageLink":"https://cdn.myanimelist.net/images/anime/7/75199.jpg","currentSeason":"3","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"1087","title":"The Case of Ayumis Illustrated Diary 3","link":"https://www.crunchyroll.com/watch/GEVUZN218/the-case-of-ayumis-illustrated-diary-3","airDate":{"dubEn":"","subtitle":"2023-06-17T04:30"}}]]}'));
+
+//Bastions (Crunchyroll) -dub only
+animeData[5].push(JSON.parse('{"mID":"55305","title":"Bastions","link":"https://myanimelist.net/anime/55305/Bastions","imageLink":"https://cdn.myanimelist.net/images/anime/1850/135882.jpg","currentSeason":"1","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"5","title":"Untitled","link":"https://www.crunchyroll.com/watch/G0DUNJQKW/untitled","airDate":{"dubEn":"2023-06-10T08:45","subtitle":""}}]]}'));
+
+//[Utawarerumono: Futari no Hakuoro] Utawarerumono: Mask of Truth (Crunchyroll) -dub only
+animeData[5].push(JSON.parse('{"mID":"40590","title":"Utawarerumono: Mask of Truth","link":"https://myanimelist.net/anime/40590/Utawarerumono__Futari_no_Hakuoro","imageLink":"https://cdn.myanimelist.net/images/anime/1516/123280.jpg","currentSeason":"1","broadcastDay":"Saturday","episodes":[[{"streamService":"crunchyRoll","episode":"24","title":"A Voice from the Abyss","link":"https://www.crunchyroll.com/watch/GZ7UV14K0/a-voice-from-the-abyss","airDate":{"dubEn":"2023-06-17T16:30","subtitle":""}},{"streamService":"crunchyRoll","episode":"25","title":"Twisted Onkami","link":"https://www.crunchyroll.com/watch/GG1U29DKM/twisted-onkami","airDate":{"dubEn":"2023-06-24T16:30","subtitle":""}},{"streamService":"crunchyRoll","episode":"26","title":"The End of a Wish","link":"https://www.crunchyroll.com/watch/G0DUNP9V9/the-end-of-a-wish","airDate":{"dubEn":"2023-07-01T16:30","subtitle":""}},{"streamService":"crunchyRoll","episode":"27","title":"Start of a Myth","link":"https://www.crunchyroll.com/watch/GEVUZM81G/start-of-a-myth","airDate":{"dubEn":"2023-07-08T16:30","subtitle":""}},{"streamService":"crunchyRoll","episode":"28","title":"Mask of Truth","link":"https://www.crunchyroll.com/watch/G7PU4EWG0/mask-of-truth","airDate":{"dubEn":"2023-07-15T16:30","subtitle":""}}]]}'));
+
+//[Boku no Kokoro no Yabai Yatsu] The Dangers in My Heart (HiDive) --sub only
+animeData[5].push(JSON.parse('{"mID":"52578","title":"The Dangers in My Heart","link":"https://myanimelist.net/anime/52578/Boku_no_Kokoro_no_Yabai_Yatsu","imageLink":"https://cdn.myanimelist.net/images/anime/1545/133887.jpg","currentSeason":"1","broadcastDay":"Saturday","episodes":[[{"streamService":"hiDive","episode":"12","title":"I WANTED TO BE SEEN","link":"https://www.hidive.com/stream/the-dangers-in-my-heart/s01e012","airDate":{"dubEn":"","subtitle":"2023-06-17T11:00"}}]]}'));
 
 //////////
 //Sunday//
@@ -187,3 +196,12 @@ animeData[6].push(JSON.parse(''));
 
 //[Tensei Kizoku no Isekai Boukenroku: Jichou wo Shiranai Kamigami no Shito] The Aristocrat's Otherworldly Adventure: Serving Gods Who Go Too Far (Crunchyroll)
 animeData[6].push(JSON.parse('{"mID":"52608","title":"The Aristocrats Otherworldly Adventure: Serving Gods Who Go Too Far","link":"https://myanimelist.net/anime/52608/Tensei_Kizoku_no_Isekai_Boukenroku__Jichou_wo_Shiranai_Kamigami_no_Shito","imageLink":"https://cdn.myanimelist.net/images/anime/1071/135255.jpg","currentSeason":"1","broadcastDay":"Sunday","episodes":[[{"streamService":"crunchyRoll","episode":"10","title":"The Trials of an A-Rank Adventurer","link":"https://www.crunchyroll.com/watch/GWDU8QVEK/the-trials-of-an-a-rank-adventurer","airDate":{"dubEn":"2023-06-18T12:00","subtitle":"2023-06-04T06:00"}},{"streamService":"crunchyRoll","episode":"11","title":"Omen of an Onslaught","link":"https://www.crunchyroll.com/watch/GG1U2ZW40/omen-of-an-onslaught","airDate":{"dubEn":"2023-06-25T12:00","subtitle":"2023-06-11T06:00"}}]]}'));
+
+//Teasing Master Takagi-san the movie
+animeData[6].push(JSON.parse(''));
+
+//Tsurune the movie - The First Shot
+animeData[6].push(JSON.parse(''));
+
+//Mirage Queen Prefers Circus
+animeData[6].push(JSON.parse(''));
