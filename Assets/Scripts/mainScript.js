@@ -30,6 +30,7 @@ var listItem; // declared variable in global scope
 var itemName; // declared variable in global scope
 
 
+
 function meLikey() {
   // gives the function the favList element
   var favList = document.querySelector("#favList");
@@ -56,6 +57,7 @@ document.querySelector('#episodeList').addEventListener('click', function(event)
       listItem = event.target.parentNode;
       itemName = listItem.firstChild.textContent.trim();
       meLikey();
+      addFavorite();
     }
   });
 
@@ -65,6 +67,7 @@ document.querySelector('#favoritesBar').addEventListener('click', function(event
 if (event.target.classList.contains("removeBtn")) {
     listItem = event.target.parentNode;
     listItem.remove();
+    removeFavorite();
   }
 });
 
@@ -72,14 +75,7 @@ if (event.target.classList.contains("removeBtn")) {
 var clearListButton = document.getElementById("clearListButton");
 var buttonContainerEl = document.querySelector(".buttonContainer")
 buttonContainerEl.addEventListener("click", function() {
-  //var favList = document.getElementById("favList");
   clearFavorite();
-/*
-  for (var i = favList.children.length - 1; i >= 0; i--) {
-    var listItem = favList.children[i];
-    listItem.remove();
-  }
-*/
 // resets the clear list button to be invisible again once list is clear
   clearListButton.style.display = 'none';
 });
@@ -88,26 +84,46 @@ buttonContainerEl.addEventListener("click", function() {
 Local Storage / Favorites Bar functions
 */
 function getFavorites(){
+  var storedFavorites = JSON.parse(localStorage.getItem('favorites'));
 
+  if (storedFavorites !== null) {
+    favorites = storedFavorites;
+  }
+  displayFavorites();
 }
 function clearFavorite(){
-  // gets the favList by it's id and sets its children to blank text, clearing out the list
-  var favList = document.getElementById("favList")
-  /*while (favList.firstChild) {
+  /*var favList = document.getElementById("favList")*/
+  while (favList.firstChild) {
     favList.removeChild(favList.lastChild);
-  }*/
-  favList.textContent = "";
+  }
+  localStorage.clear();
+  /*favList.textContent = "";*/
 }
 function addFavorite(name){
-// this is taken care of in the section of code above with the 'meLikey' function
+
 }
 function removeFavorite(key){
-
+  localStorage.removeItem()
 }
 function displayFavorites(){
+  // sets the favlist to blank so nothing gets displayed twice
+  favList.textContent= ""
 
+  for (var i = 0; i < favorites.length; i++) {
+    var favorite = favorites[i];
+
+    var list = document.createElement("li");
+    list.textContent = favorite;
+
+    var removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.classList.add("removeBtn");
+
+    list.appendChild(removeBtn);
+    favList.appendChild(list);
+  }
 }
-
+getFavorites()
 /*
 Episodes View functions
 */
