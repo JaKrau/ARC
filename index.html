@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Release Calendar</title>
     <link rel="stylesheet" href="./Assets/Styles/style.css"/>
+    <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"
+></script>
 </head>
 
 <body>
@@ -20,19 +25,20 @@
             <div class = "buttonContainer">
                 <button id="clearListButton" style="display: none;">Remove All Favorites</button>
             </div>
+
     </aside>
     <main id="episodeList">
-        <h2>Previous Days</h2>
+        <!-- Java Script inserted code
+        <h2>Calendar</h2>
         <section class="day" id="day-0"></section>
-            <!--- Java Script Enters Code Here-->
         <section class="day" id="day-1"></section>
-            <!--- Java Script Enters Code Here-->
         <section class="day" id="day-2"></section>
-            <!--- Java Script Enters Code Here-->
         <section class="day" id="day-3"></section>
-            <!--- Java Script Enters Code Here-->
+        -->
     </main>
 
+    <!-- Holds data on anime streaming releases -->
+    <script type="text/javascript" src="./Assets/Data/AnimeInfo.js"></script>
     <script type="text/javascript" src="./Assets/Scripts/mainScript.js"></script>
 </body>
 </html>

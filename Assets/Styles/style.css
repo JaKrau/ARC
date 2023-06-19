@@ -1,0 +1,32 @@
+.stylizedBracketBorder{
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 2px;
+    max-width: fit-content;
+}
+.episode{
+    background-color: lightgrey;
+    padding: 2px;
+    margin: 4px;
+    display: block;
+}
+.episode h4, h5, p{
+    margin: 2px;
+
+}
+.episode a{
+    text-decoration: none;
+    color: black;
+}
+.day{
+    white-space: pre-line;
+    max-width: 15%;
+    background-color: darkgray;
+    padding: 2px;
+    margin: 4px;
+    display: inline-block;
+    vertical-align: top;
+}

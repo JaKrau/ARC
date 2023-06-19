@@ -1,0 +1,17 @@
+Notes for Jake
+
+Global var now was converted to a string using the .format method. When it is used later, the dayjs functions will not work.
+Global array fiveEpisodeDisplay calls displayEpisode 5 times, but does not pass arguments.
+In the displayDay function:
+    fiveEpisodeDisplay represents an array, but the index is not referenced.
+    The text content will be unformatted as written.
+In the displayEpisode function:
+    sectionEl represents an array as written, but the index is not referenced when it's used.
+    the array indices need to be outside the string quotes.
+    .setAttribute takes 2 arguments, and only altars one attribute
+
+Logic behind the display functions.
+    displayList() is called
+    displayList() has a loop for each day where it calls displayDay(day)
+    displayDay(day) has a loop for each episode it calls displayEpisode(day, key) and appends the article to the section for that day
+    displayEpisode(day, key) adds an article element for the episode referenced and returns the article element.

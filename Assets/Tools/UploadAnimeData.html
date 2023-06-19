@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Anime Data</title>
+    <link rel="stylesheet" href="../Styles/upload.css"/>
+</head>
+<body>
+    <!---Area for series information-->
+    Series Information
+    <form id="series">
+        <label for="mID">mID: </label>
+            <input type="number" name="mID"/>
+        <label for="seriesTitle">Title: </label>
+            <input type="text" name="seriesTitle"/>
+        <label for="seriesLink">Link: </label>
+            <input type="url" name="seriesLink"/>
+        <label for="seriesImageLink">Thumbnail Link: </label>
+            <input type="url" name="seriesImageLink"/>
+        <label for="currentSeason">Current Season: </label>
+            <input type="text" name="currentSeason"/>
+        <label for="broadcastDay">Broadcast Day: </label>
+            <input type="text" name="broadcastDay"/>
+        Streaming Services:
+        <!---Area for episode information-->
+        <div id="crunchyRollStream">
+            <label for="crunchyRoll">CrunchyRoll</label>
+                <input type="checkbox" name="crunchyRoll"/>
+            <label for="crunchyRollEp">Episodes</label>
+                <input type="range" name="crunchyRollEp" id="crunchyRollEp" min="1" max="6" value="1"/>
+                <!-- Sample Generate from JavaScript
+                    Crunchyroll Episodes
+                    <div id="crunchyRollDiv{#}" class="crunchyRoll">
+                        <label for="crunchyRollNum{#}">Episode: </label>
+                            <input type="number" name="crunchyEpNum{#}"/>
+                        <label for="crunchyRollTitle{#}">Title: </label>
+                            <input type="text" name="crunchyEpTitle{#}"/>
+                        <label for="crunchyRollLink{#}">Stream Link: </label>
+                            <input type="url" name="crunchyEpLnkEN{#}"/>
+                        <label for="crunchyRollAirDubEN{#}">Air date(DUB): </label>
+                            <input type="datetime-local" name="crunchyEpAirDubEN{#}"/>
+                        <label for="crunchyRollAirSubtitle{#}">Air date(SUB): </label>
+                            <input type="datetime-local" name="crunchyEpAirSubtitle{#}"/>
+                    </div>
+                -->
+        </div>
+        <div id="hiDiveStream">
+        <label for="hiDive">HiDive</label>
+            <input type="checkbox" name="hiDive"/>
+        <label for="hiDiveEp">Episodes</label>
+            <input type="range" name="hiDiveEp" id="hiDiveEp" min="1" max="6" value="1"/>
+        </div>
+        <div id="netflixStream">
+        <label for="netflix">Netflix</label>
+            <input type="checkbox" name="netflix"/>
+        <label for="netflixEp">Episodes</label>
+            <input type="range" name="netflixEp" id="netflixEp" min="1" max="6" value="1"/>
+        </div>
+        <input type="submit"/>
+        <input type="reset"/>
+    </form>
+    <script type="text/javascript" src="./UploadAnimeData.js"></script>
+</body>
+</html>
