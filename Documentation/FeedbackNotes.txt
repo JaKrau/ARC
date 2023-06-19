@@ -15,3 +15,8 @@ Logic behind the display functions.
     displayList() has a loop for each day where it calls displayDay(day)
     displayDay(day) has a loop for each episode it calls displayEpisode(day, key) and appends the article to the section for that day
     displayEpisode(day, key) adds an article element for the episode referenced and returns the article element.
+
+Notes for Mikey
+parameters were not entered for function calls.
+Doesn't add semicolons to the end of statements.
+Uses variables globally that are better used locally

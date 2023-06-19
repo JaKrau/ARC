@@ -1,25 +1,37 @@
 .stylizedBracketBorder{
     border-style: solid;
-    border-color: black;
     border-radius: 8px;
     border-top: 0;
     border-bottom: 0;
     padding: 2px;
     max-width: fit-content;
 }
-.episode{
+.episode, .favorite{
     background-color: lightgrey;
     padding: 2px;
     margin: 4px;
     display: block;
 }
-.episode h4, h5, p{
+h4, h5, p{
     margin: 2px;
 
 }
-.episode a{
+a{
     text-decoration: none;
     color: black;
+    border-color: black;
+    transition: 100ms;
+}
+a:hover{
+    font-size: 105%;
+    color: green;
+    border-color: green;
+}
+button{
+    transition: 100ms;
+}
+button:hover{
+    transform: scale(105%);
 }
 .day{
     white-space: pre-line;
@@ -28,5 +40,22 @@
     padding: 2px;
     margin: 4px;
     display: inline-block;
+    vertical-align: top;
+}
+
+#favoritesBar{
+    display: inline-block;
+    max-width: 15%;
+    background-color: darkgray;
+    padding: 2px;
+    margin: 4px;
+    vertical-align: top;
+}
+#episodeList{
+    display: inline-block;
+    max-width: 80%;
+    background-color: darkgrey;
+    padding: 2px;
+    margin: 4px;
     vertical-align: top;
 }

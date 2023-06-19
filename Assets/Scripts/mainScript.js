@@ -32,10 +32,20 @@ var favorites = new Array();
 var episodes = new Array();
 var keyFavorites = "favorites";
 var numberDays = 6;
+/*
 var listItem;
 var itemName;
+var clearListButton = document.getElementById("clearListButton");
+var buttonContainerEl = document.querySelector(".buttonContainer")
+buttonContainerEl.addEventListener("click", function() {
+  clearFavorite();
+// resets the clear list button to be invisible again once list is clear
+  clearListButton.style.display = 'none';
+});
+*/
 
 makeDays();
+getFavorites();
 parseData();
 displayList();
 
@@ -45,13 +55,9 @@ function makeDays(){
     episodes.push(new Array());
   }
 }
-
-
-var listItem; // declared variable in global scope
-var itemName; // declared variable in global scope
-
+/*
+//Add a series to favorites bar
 function meLikey() {
-  // gives the function the favList element
   var favList = document.querySelector("#favList");
   var favItem = document.createElement('li');
   favItem.textContent = itemName;
@@ -89,43 +95,64 @@ if (event.target.classList.contains("removeBtn")) {
     removeFavorite();
   }
 });
-
-
-var clearListButton = document.getElementById("clearListButton");
-var buttonContainerEl = document.querySelector(".buttonContainer")
-buttonContainerEl.addEventListener("click", function() {
-  clearFavorite();
-// resets the clear list button to be invisible again once list is clear
-  clearListButton.style.display = 'none';
-});
-
+*/
 /*
 Local Storage / Favorites Bar functions
 */
 function getFavorites(){
-  var storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+  var storedFavorites = JSON.parse(localStorage.getItem(keyFavorites));
 
   if (storedFavorites !== null) {
     favorites = storedFavorites;
   }
+  else{
+    favorites = new Array();
+  }
   displayFavorites();
 }
-function clearFavorite(){
-  /*var favList = document.getElementById("favList")*/
+function clearFavorites(){
+  localStorage.removeItem(keyFavorites);
+  getFavorites();
+  /*var favList = document.getElementById("favList")
   while (favList.firstChild) {
     favList.removeChild(favList.lastChild);
   }
   localStorage.clear();
-  /*favList.textContent = "";*/
+  favList.textContent = "";*/
 }
 function addFavorite(name){
-    favorites.push(name);
-    localStorage.setItem(keyFavorites, JSON.stringify(favorites));
+  if(checkAlreadyFavorite(name)){
+    return;
+  }
+  if(favorites.length > 10){
+    favorites.splice(0, 1);
+  }
+  favorites.push(name);
+  localStorage.setItem(keyFavorites, JSON.stringify(favorites));
+  displayFavorites();
+}
+function checkAlreadyFavorite(name){
+  for(fav of favorites){
+    if(fav.mID == name.mID){
+      return true;
+    }
+  }
+  return false;
 }
 function removeFavorite(key){
-  localStorage.removeItem()
+  if(favorites.length > 1){
+    favorites.splice(key, 1);
+    localStorage.setItem(keyFavorites, JSON.stringify(favorites));
+  }
+  else{
+    clearFavorites();
+  }
+  displayFavorites();
 }
+
 function displayFavorites(){
+
+  /*
   // sets the favlist to blank so nothing gets displayed twice
   favList.textContent= ""
 
@@ -142,8 +169,58 @@ function displayFavorites(){
     list.appendChild(removeBtn);
     favList.appendChild(list);
   }
+  */
+  let favoriteBarEl = document.getElementById("favoritesBar");
+  favoriteBarEl.innerHTML = '';
+  if(favorites.length <= 0){
+    return;
+  }
+  let h2El = document.createElement('h2');
+  favoriteBarEl.appendChild(h2El);
+  h2El.textContent = "Favorites";
+  for(let i=0; i<favorites.length; i++){
+    favoriteBarEl.appendChild(displayFavoriteSeries(i));
+  }
+  let clearButtonEl = document.createElement('button');
+  clearButtonEl.textContent = "Clear";
+  clearButtonEl.addEventListener('click', clearFavorites);
+  favoriteBarEl.appendChild(clearButtonEl);
 }
-getFavorites()
+
+function displayFavoriteSeries(index){
+  let episodeObj = favorites[index];
+  let articleEl = document.createElement('article');
+  articleEl.className = "favorite";
+  articleEl.id = "fav" + index;
+
+  let aEl1 = document.createElement('a');
+  aEl1.href = episodeObj.seriesLink;
+  let h4El = document.createElement('h4');
+  h4El.textContent = episodeObj.series;
+  aEl1.appendChild(h4El);
+
+  let aEl2 = document.createElement('a');
+  aEl2.href = episodeObj.link;
+  let h5El = document.createElement('h5');
+  h5El.textContent = "Ep." + episodeObj.number + " " + episodeObj.title;
+  let pEl = document.createElement('p');
+  pEl.textContent = episodeObj.stream + " " + episodeObj.lang;
+  pEl.className = "stylizedBracketBorder";
+  aEl2.appendChild(h5El);
+  aEl2.appendChild(pEl);
+
+  let removeButtonEl = document.createElement('button');
+  removeButtonEl.textContent = "Remove";
+  removeButtonEl.addEventListener('click', function(event){
+    event.preventDefault();
+    removeFavorite(index);
+  });
+
+  articleEl.appendChild(aEl1);
+  articleEl.appendChild(aEl2);
+  articleEl.appendChild(removeButtonEl);
+  return articleEl;
+}
 /*
 Episodes View functions
 */
@@ -248,24 +325,23 @@ function displayEpisode(day, key){
   linkEl2.href = episodes[day][key].link;
   let h5El = document.createElement('h5');
   h5El.textContent = "Ep." + episodes[day][key].number + " " + episodes[day][key].title;
-  let pEl1 = document.createElement('p');
-  pEl1.textContent = episodes[day][key].stream + " " + episodes[day][key].lang;
-  pEl1.className = "stylizedBracketBorder"
+  let pEl = document.createElement('p');
+  pEl.textContent = episodes[day][key].stream + " " + episodes[day][key].lang;
+  pEl.className = "stylizedBracketBorder";
   linkEl2.appendChild(h5El);
-  linkEl2.appendChild(pEl1);
+  linkEl2.appendChild(pEl);
 
-  let pEl2 = document.createElement('p');
-  pEl2.className = "stylizedBracketBorder"
-  pEl2.textContent = "Favorite";
+  let favoriteButtonEl = document.createElement('button');
+  favoriteButtonEl.textContent = "Favorite";
+  favoriteButtonEl.addEventListener('click', function(event){
+    event.preventDefault();
+    addFavorite(episodes[day][key]);
+  });
 
   articleEl.appendChild(linkEl1);
   articleEl.appendChild(linkEl2);
-  articleEl.appendChild(pEl2);
+  articleEl.appendChild(favoriteButtonEl);
 
-  pEl2.addEventListener('click', function(event){
-    event.preventDefault();
-    addFavorite(episodes[day][key].series);
-  });
   return articleEl;  
   /*
   let episodeImage = document.createElement("img");
@@ -327,10 +403,17 @@ function addEpisode(day, episodeData, serviceIndex, episodeIndex, episodeLang){
 //Generate Summary from fetch jikan
 //Generate Cast from fetch imdb
 function getSummary(id){
-  fetchCall("https://api.jikan.moe/v4/anime/" + id + "/full");
+  let fullData = fetchCall("https://api.jikan.moe/v4/anime/" + id + "/full");
+  return fullData.data.synopsis;
 }
 async function fetchCall(address){
   let response = await fetch(address);
   let data = await response.json();
   return data;
+}
+/* Waifu generator API https://waifu.pics/docs
+*/
+function getWaifu(){
+  let waifu = fetchCall("https://api.waifu.pics/sfw/waifu");
+  return waifu.url;
 }
