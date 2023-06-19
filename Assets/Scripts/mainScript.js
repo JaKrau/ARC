@@ -46,93 +46,104 @@ function makeDays(){
   }
 }
 
-// when i click a button
-// it adds an item to a separate 'favorites' list
-// when the item gets added to the favorites list it has a button to remove it from the list
 
-
-// function to make it so when a button is clicked in the item list, it gets the item name and creates a new li and sets its text content to the itemName
-/* document.getElementById('itemList').addEventListener('click', function(event) {
-    if (event.target.classList.contains('addButton')) {
-      var listItem = event.target.parentNode;
-      // itemName variable set to only include the text content of the list item
-      var itemName = listItem.firstChild.textContent.trim();
-      // logged to console here to make sure the correct item is being targeted in the event
-      console.log(itemName)
-      console.log(listItem)
-  
-      // Create a new favorite item element
-      var favoriteItem = document.createElement('li');
-      favoriteItem.textContent = itemName;
-  
-      // Append the favorite item to the favorites list
-      document.querySelector('.favList ul').appendChild(favoriteItem);
-    }
-  }); */
-
-//---------------------------------------------------------------------------------//
-
-// the same code as above but with a function to make calling it easier if needed
-// this code also has a remove button with it
-
+var listItem; // declared variable in global scope
+var itemName; // declared variable in global scope
 
 function meLikey() {
   // gives the function the favList element
-  var favList = document.querySelector(".favList ul")
+  var favList = document.querySelector("#favList");
   var favItem = document.createElement('li');
   favItem.textContent = itemName;
 
+  // creates removeBtn variable and assigns it, adds the button text and appropriate class
   var removeBtn = document.createElement("button");
   removeBtn.textContent = "Remove";
   removeBtn.classList.add("removeBtn");
 
+  // adds the remove button to the favorite item and adds the item to the favorites list
   favItem.appendChild(removeBtn);
   favList.appendChild(favItem);
+
+// this sets the clear favorites list button to be visible but only after something is in the list
+  clearListButton.style.display = 'block'
+
 }
-/*
 // creates a click event listener on the itemList class, that adds the content to the favorite list
 
-document.querySelector('.itemList').addEventListener('click', function(event) {
+document.querySelector('#episodeList').addEventListener('click', function(event) {
   if (event.target.classList.contains("addButton")) {
       listItem = event.target.parentNode;
       itemName = listItem.firstChild.textContent.trim();
       meLikey();
+      addFavorite();
     }
   });
 
 
 // creates a click event listener on the ul of the favList class that removes the item from the list
-document.querySelector('.favList ul').addEventListener('click', function(event) {
+document.querySelector('#favoritesBar').addEventListener('click', function(event) {
 if (event.target.classList.contains("removeBtn")) {
     listItem = event.target.parentNode;
     listItem.remove();
+    removeFavorite();
   }
 });
-*/
-//---------------------------------------------------------------------------------//
 
 
+var clearListButton = document.getElementById("clearListButton");
+var buttonContainerEl = document.querySelector(".buttonContainer")
+buttonContainerEl.addEventListener("click", function() {
+  clearFavorite();
+// resets the clear list button to be invisible again once list is clear
+  clearListButton.style.display = 'none';
+});
 
 /*
 Local Storage / Favorites Bar functions
 */
 function getFavorites(){
+  var storedFavorites = JSON.parse(localStorage.getItem('favorites'));
 
+  if (storedFavorites !== null) {
+    favorites = storedFavorites;
+  }
+  displayFavorites();
 }
 function clearFavorite(){
-
+  /*var favList = document.getElementById("favList")*/
+  while (favList.firstChild) {
+    favList.removeChild(favList.lastChild);
+  }
+  localStorage.clear();
+  /*favList.textContent = "";*/
 }
 function addFavorite(name){
     favorites.push(name);
     localStorage.setItem(keyFavorites, JSON.stringify(favorites));
 }
 function removeFavorite(key){
-
+  localStorage.removeItem()
 }
 function displayFavorites(){
+  // sets the favlist to blank so nothing gets displayed twice
+  favList.textContent= ""
 
+  for (var i = 0; i < favorites.length; i++) {
+    var favorite = favorites[i];
+
+    var list = document.createElement("li");
+    list.textContent = favorite;
+
+    var removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.classList.add("removeBtn");
+
+    list.appendChild(removeBtn);
+    favList.appendChild(list);
+  }
 }
-
+getFavorites()
 /*
 Episodes View functions
 */
