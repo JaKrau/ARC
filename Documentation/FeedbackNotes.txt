@@ -1,22 +1,22 @@
 Notes for Jake
-
-Global var now was converted to a string using the .format method. When it is used later, the dayjs functions will not work.
-Global array fiveEpisodeDisplay calls displayEpisode 5 times, but does not pass arguments.
-In the displayDay function:
-    fiveEpisodeDisplay represents an array, but the index is not referenced.
-    The text content will be unformatted as written.
-In the displayEpisode function:
-    sectionEl represents an array as written, but the index is not referenced when it's used.
-    the array indices need to be outside the string quotes.
-    .setAttribute takes 2 arguments, and only altars one attribute
-
-Logic behind the display functions.
-    displayList() is called
-    displayList() has a loop for each day where it calls displayDay(day)
-    displayDay(day) has a loop for each episode it calls displayEpisode(day, key) and appends the article to the section for that day
-    displayEpisode(day, key) adds an article element for the episode referenced and returns the article element.
+Converting an object to a string, then referencing it as an object.
+Doesn't pass arguments to functions.
+Doesn't reference the index of the array.
+Kept the index of an array within a string.
+Passing the incorrect parameters to a method/object functon.
 
 Notes for Mikey
 parameters were not entered for function calls.
 Doesn't add semicolons to the end of statements.
-Uses variables globally that are better used locally
+Uses variables globally that are better used locally.
+
+Overall notes:
+A variable represents something that needs to be remembered. Nearly all variables will use nouns or adjectives.
+A function represents doing something. Nearly all functions will use verbs.
+
+Functions are a nice way to break down logic from psuedo-code. Start with the high level. Then list in psuedo code what you need to do to achieve that high level. If you see a verb that would require more than 10 lines of code. Make another function. Then list the psuedo code until you dig down to basic syntax. For Instance.
+//Display Calender
+->//Display Day
+  ->//Display Episode
+
+For only working with javascript for a month under this format. It's still impressive what you accomplished without prior coding knowledge. Given the format of the class, it may be helpful to subscribe to a Front-End / Full-stack Developer Channel.

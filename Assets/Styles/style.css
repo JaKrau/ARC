@@ -1,31 +1,37 @@
-.stylizedBracketBorder{
-    border-style: solid;
-    border-radius: 8px;
-    border-top: 0;
-    border-bottom: 0;
-    padding: 2px;
-    max-width: fit-content;
-}
-.episode, .favorite{
-    background-color: lightgrey;
-    padding: 2px;
-    margin: 4px;
-    display: block;
-}
-h4, h5, p{
-    margin: 2px;
 
+/* Made a couple layers to help get a dynamic background image displayed as I wanted.*/
+*{
+    z-index: 3;
 }
-a{
-    text-decoration: none;
-    color: black;
-    border-color: black;
+body{
+    background-color: aliceblue;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+#backgroundGradient{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(240, 248, 255, 0.25) 0%, aliceblue 100%);
+}
+#backgroundImage{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    opacity: 0.25;
+}
+#backdrop{
+    width: 100vi;
+}
+
+/* Scales the element to help alert the user they are hovering over it*/
+article{
     transition: 100ms;
 }
-a:hover{
-    font-size: 105%;
-    color: green;
-    border-color: green;
+article:hover{
+    transform: scale(105%);
 }
 button{
     transition: 100ms;
@@ -33,29 +39,24 @@ button{
 button:hover{
     transform: scale(105%);
 }
-.day{
-    white-space: pre-line;
-    max-width: 15%;
-    background-color: darkgray;
-    padding: 2px;
-    margin: 4px;
-    display: inline-block;
-    vertical-align: top;
+
+/* A details pane to display when the user hovers over an episode*/
+#hoverInfo{
+    display: none;
+    position: fixed;
+    left: 10%;
+    top: 16px;
+    width: 20%;
 }
 
-#favoritesBar{
-    display: inline-block;
-    max-width: 15%;
-    background-color: darkgray;
-    padding: 2px;
-    margin: 4px;
-    vertical-align: top;
+#title{
+    text-align: center;
 }
-#episodeList{
-    display: inline-block;
-    max-width: 80%;
-    background-color: darkgrey;
-    padding: 2px;
-    margin: 4px;
-    vertical-align: top;
+/* A dashed line to help navigate */
+.day{
+    border: 1px;
+    margin: 2px;
+    margin-top: 16px;
+    border-style: dashed;
+    border-color: black;
 }

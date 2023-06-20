@@ -27,27 +27,20 @@ class Episode{
 /*
 Working variables
 */
-var days = new Array();
-var favorites = new Array();
-var episodes = new Array();
-var keyFavorites = "favorites";
-var numberDays = 6;
-/*
-var listItem;
-var itemName;
-var clearListButton = document.getElementById("clearListButton");
-var buttonContainerEl = document.querySelector(".buttonContainer")
-buttonContainerEl.addEventListener("click", function() {
-  clearFavorite();
-// resets the clear list button to be invisible again once list is clear
-  clearListButton.style.display = 'none';
-});
-*/
+var days = new Array();           //Holds dayjs() objects
+var favorites = new Array();      //Holds episode data of favorite selections
+var episodes = new Array();       //Holds episode data for what was already released
+var keyFavorites = "favorites";   //Key value for local storage
+var numberDays = 6;               //Number of days to include in the calendar
+var jikanReady = true;            //Determines if jikan API is ready to use
+var jikanVal;                     //Holds the most recent value to query jikan API
 
-makeDays();
-getFavorites();
-parseData();
-displayList();
+//Initialize code
+makeDays();       //Create the dayjs() objects
+getFavorites();   //Check local storage for favorites
+parseData();      //Go through the AnimeInfo.js data object and get information needed
+displayList();    //Display a list of episodes aired each day
+displayWaifu();   //Get a Waifu image to use as a background
 
 function makeDays(){
   for(let i=0; i < numberDays; i++){
@@ -55,47 +48,7 @@ function makeDays(){
     episodes.push(new Array());
   }
 }
-/*
-//Add a series to favorites bar
-function meLikey() {
-  var favList = document.querySelector("#favList");
-  var favItem = document.createElement('li');
-  favItem.textContent = itemName;
 
-  // creates removeBtn variable and assigns it, adds the button text and appropriate class
-  var removeBtn = document.createElement("button");
-  removeBtn.textContent = "Remove";
-  removeBtn.classList.add("removeBtn");
-
-  // adds the remove button to the favorite item and adds the item to the favorites list
-  favItem.appendChild(removeBtn);
-  favList.appendChild(favItem);
-
-// this sets the clear favorites list button to be visible but only after something is in the list
-  clearListButton.style.display = 'block'
-
-}
-// creates a click event listener on the itemList class, that adds the content to the favorite list
-
-document.querySelector('#episodeList').addEventListener('click', function(event) {
-  if (event.target.classList.contains("addButton")) {
-      listItem = event.target.parentNode;
-      itemName = listItem.firstChild.textContent.trim();
-      meLikey();
-      addFavorite();
-    }
-  });
-
-
-// creates a click event listener on the ul of the favList class that removes the item from the list
-document.querySelector('#favoritesBar').addEventListener('click', function(event) {
-if (event.target.classList.contains("removeBtn")) {
-    listItem = event.target.parentNode;
-    listItem.remove();
-    removeFavorite();
-  }
-});
-*/
 /*
 Local Storage / Favorites Bar functions
 */
@@ -113,12 +66,6 @@ function getFavorites(){
 function clearFavorites(){
   localStorage.removeItem(keyFavorites);
   getFavorites();
-  /*var favList = document.getElementById("favList")
-  while (favList.firstChild) {
-    favList.removeChild(favList.lastChild);
-  }
-  localStorage.clear();
-  favList.textContent = "";*/
 }
 function addFavorite(name){
   if(checkAlreadyFavorite(name)){
@@ -150,38 +97,32 @@ function removeFavorite(key){
   displayFavorites();
 }
 
+/*
+Add favorites to favorites bar
+<h2>Favorites</h2>
+<article class="favorite" id="fav0"></article>
+<article class="favorite" id="fav1"></article>
+<article class="favorite" id="fav2"></article>
+<article class="favorite" id="fav3"></article>
+<button>Clear favorites</button>
+...
+*/
 function displayFavorites(){
-
-  /*
-  // sets the favlist to blank so nothing gets displayed twice
-  favList.textContent= ""
-
-  for (var i = 0; i < favorites.length; i++) {
-    var favorite = favorites[i];
-
-    var list = document.createElement("li");
-    list.textContent = favorite;
-
-    var removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
-    removeBtn.classList.add("removeBtn");
-
-    list.appendChild(removeBtn);
-    favList.appendChild(list);
-  }
-  */
   let favoriteBarEl = document.getElementById("favoritesBar");
   favoriteBarEl.innerHTML = '';
   if(favorites.length <= 0){
     return;
   }
   let h2El = document.createElement('h2');
-  favoriteBarEl.appendChild(h2El);
+  h2El.className = "title is-4";
   h2El.textContent = "Favorites";
+  favoriteBarEl.appendChild(h2El);
+
   for(let i=0; i<favorites.length; i++){
     favoriteBarEl.appendChild(displayFavoriteSeries(i));
   }
   let clearButtonEl = document.createElement('button');
+  clearButtonEl.className = "button is-small is-responsive";
   clearButtonEl.textContent = "Clear";
   clearButtonEl.addEventListener('click', clearFavorites);
   favoriteBarEl.appendChild(clearButtonEl);
@@ -190,26 +131,37 @@ function displayFavorites(){
 function displayFavoriteSeries(index){
   let episodeObj = favorites[index];
   let articleEl = document.createElement('article');
-  articleEl.className = "favorite";
+  articleEl.className = "favorite box content is-small";
   articleEl.id = "fav" + index;
 
   let aEl1 = document.createElement('a');
   aEl1.href = episodeObj.seriesLink;
-  let h4El = document.createElement('h4');
-  h4El.textContent = episodeObj.series;
-  aEl1.appendChild(h4El);
+  let h3El = document.createElement('h3');
+  h3El.textContent = episodeObj.series;
+  aEl1.appendChild(h3El);
 
   let aEl2 = document.createElement('a');
   aEl2.href = episodeObj.link;
-  let h5El = document.createElement('h5');
-  h5El.textContent = "Ep." + episodeObj.number + " " + episodeObj.title;
+  let h4El = document.createElement('h4');
+  h4El.textContent = "Ep." + episodeObj.number + " " + episodeObj.title;
   let pEl = document.createElement('p');
-  pEl.textContent = episodeObj.stream + " " + episodeObj.lang;
-  pEl.className = "stylizedBracketBorder";
-  aEl2.appendChild(h5El);
+  let stream = ""
+  switch(episodeObj.stream){
+    case "crunchyRoll":
+      stream = "crunchyroll ";
+      break;
+    case "hiDive":
+      stream = "HiDive ";
+      break;
+    case "netflix":
+      stream = "Netflix ";
+  }
+  pEl.textContent = stream + episodeObj.lang;
+  aEl2.appendChild(h4El);
   aEl2.appendChild(pEl);
 
   let removeButtonEl = document.createElement('button');
+  removeButtonEl.className = "button is-small is-responsive";
   removeButtonEl.textContent = "Remove";
   removeButtonEl.addEventListener('click', function(event){
     event.preventDefault();
@@ -221,18 +173,14 @@ function displayFavoriteSeries(index){
   articleEl.appendChild(removeButtonEl);
   return articleEl;
 }
+
 /*
 Episodes View functions
 */
-
 //Calls a function for each day
 function displayList(){
   let mainEl = document.getElementById('episodeList');
   mainEl.innerHTML = '';
-
-  let h2El = document.createElement('h2');
-  h2El.textContent = "Calendar";
-  mainEl.appendChild(h2El);
   for(let day=0; day<numberDays; day++){
     mainEl.appendChild(displayDay(day));
   }
@@ -252,11 +200,9 @@ function displayList(){
 */
 function displayDay(day){
   let dayEl = document.createElement('section')
-  dayEl.className = "day";
+  dayEl.className = "day column";
   dayEl.id = "day-" + day;
-  //var day1 = document.getElementById('day-1');
-  //var day2 = document.getElementById('day-2');
-  //var day3 = document.getElementById('day-3');
+
   let date = "";
   switch(day){
     case 0:
@@ -270,35 +216,25 @@ function displayDay(day){
       break
   }
   date += days[day].format('MMM D, YYYY');
-  //var yesterday = now.subtract(1, 'day');
-  //var twoDaysAgo = now.subtract(2, 'day');
-  //var threeDaysAgo = now.subtract(3, 'day');
-  let h2El = document.createElement('h3');
+
+  let h2El = document.createElement('h2');
+  h2El.className = "title is-4";
   h2El.textContent = date;
   dayEl.appendChild(h2El);
-  //day0.textContent = "Today " + "(" + now + ")";
-  //day1.textContent = "Yesterday " + "(" + yesterday + ")";
-  //day2.textContent = "Two Days Ago " + "(" + twoDaysAgo + ")";
-  //day3.textContent = "Three Days Ago " + "(" + threeDaysAgo + ")";
 
   for(let key = 0; key < episodes[day].length; key++){
     dayEl.appendChild(displayEpisode(day, key));
   }
-
   return dayEl
-  //day0.innerHTML = fiveEpisodeDisplay; 
-  //day1.innerHTML = fiveEpisodeDisplay;
-  //day2.innerHTML = fiveEpisodeDisplay;
-  //day3.innerHTML = fiveEpisodeDisplay;
 }
 //Creates Dom elements, and adds information from episodes[day][key] returns Dom Element Object for an episode
 /*
 <article class="episode" id="episodes[day][key]">
     <a href=episodes[day][key].seriesLink>
-        <h4>episodes[day][key].series</h4>
+        <h3>episodes[day][key].series</h3>
     </a>
     <a href=episodes[day][key].link>
-        <h5>"Ep." + episodes[day][key].number + " " + episodes[day][key].title</h5>
+        <h4>"Ep." + episodes[day][key].number + " " + episodes[day][key].title</h4>
         <p class='stylizedBracketBorder'>[DUB]</p>
         *Removed add to hover window <img src=episodes[day][key].preview />
     </a>
@@ -309,29 +245,38 @@ function displayDay(day){
 </article>
 */
 function displayEpisode(day, key){
-  //let sectionEl = document.getElementsByClassName("day");
-
   let articleEl = document.createElement('article');
-  articleEl.className = "episode";
+  articleEl.className = "episode box content is-small";
   articleEl.id = "episodes[" + day + "][" + key + "]";
   
   let linkEl1 = document.createElement('a');
   linkEl1.href = episodes[day][key].seriesLink;
-  let h4El = document.createElement('h4');  
-  h4El.textContent = episodes[day][key].series;
-  linkEl1.appendChild(h4El);
+  let h3El = document.createElement('h3');  
+  h3El.textContent = episodes[day][key].series;
+  linkEl1.appendChild(h3El);
   
   let linkEl2 = document.createElement('a');
   linkEl2.href = episodes[day][key].link;
-  let h5El = document.createElement('h5');
-  h5El.textContent = "Ep." + episodes[day][key].number + " " + episodes[day][key].title;
+  let h4El = document.createElement('h4');
+  h4El.textContent = "Ep." + episodes[day][key].number + " " + episodes[day][key].title;
   let pEl = document.createElement('p');
-  pEl.textContent = episodes[day][key].stream + " " + episodes[day][key].lang;
-  pEl.className = "stylizedBracketBorder";
-  linkEl2.appendChild(h5El);
+  let stream = ""
+  switch(episodes[day][key].stream){
+    case "crunchyRoll":
+      stream = "crunchyroll ";
+      break;
+    case "hiDive":
+      stream = "HiDive ";
+      break;
+    case "netflix":
+      stream = "Netflix ";
+  }
+  pEl.textContent = stream + episodes[day][key].lang;
+  linkEl2.appendChild(h4El);
   linkEl2.appendChild(pEl);
 
   let favoriteButtonEl = document.createElement('button');
+  favoriteButtonEl.className = "button is-small is-responsive";
   favoriteButtonEl.textContent = "Favorite";
   favoriteButtonEl.addEventListener('click', function(event){
     event.preventDefault();
@@ -342,33 +287,37 @@ function displayEpisode(day, key){
   articleEl.appendChild(linkEl2);
   articleEl.appendChild(favoriteButtonEl);
 
+  articleEl.addEventListener('mouseenter', function(event){
+    event.preventDefault();
+    let posX = articleEl.posX + 100;
+    let posY = articleEl.posY - 100;
+    let hoverInfoEl = document.getElementById("hoverInfo");
+    let hoverImageEl = document.getElementById("hoverImage");
+    let hoverTitleEl = document.getElementById("hoverTitle");
+    
+    hoverImageEl.src = episodes[day][key].seriesImage;
+    hoverTitleEl.textContent = episodes[day][key].series;
+    getSummary(episodes[day][key].mID);
+    hoverInfoEl.style.display = "block";
+    hoverInfoEl.style.left = posX + "px";
+    hoverInfoEl.style.top = posY + "px";
+  });
+  articleEl.addEventListener('mouseleave', function(event){
+    event.preventDefault();
+    let hoverInfoEl = document.getElementById("hoverInfo");
+    hoverInfoEl.style.display = "none";
+  });
+
   return articleEl;  
-  /*
-  let episodeImage = document.createElement("img");
-  episodeImage.setAttribute("class = episodeImage");
-  episodeImage.setAttribute("src=episodes[day][key].preview");
-
-  let releaseDate = document.createElement("h4");  
-  releaseDate.setAttribute("class = releaseDate");
-  releaseDate.innerHTML = episodes[day][key].release;
-
-  let lineBreak = document.createElement("br");
-  
-  aElement1.appendChild(h3);
-  aElement2.appendChild(h2, h4, lineBreak);
-  aElement2.appendChild(episodeImage);
-  articleEl.appendChild(aElement1);
-  articleEl.appendChild(aElement2);
-  */
 }
 
-/*Functions to add and use episode data
-*/
+//Reads the data set for each day
 function parseData(){
   for(let day = 0; day < numberDays; day++){
     evaluateDay(day);
   }
 }
+//See if an episode was aired on a day, then adds it to the episodes[day] array
 function evaluateDay(day){
   let dayEval = days[day].format('YYYY-MM-DD');
   for(let i = 0; i < animeData.length; i++){
@@ -386,6 +335,7 @@ function evaluateDay(day){
     }
   }
 }
+//Creates and episode object
 function addEpisode(day, episodeData, serviceIndex, episodeIndex, episodeLang){
   let series = episodeData.title;
   let mID = episodeData.mID;
@@ -399,21 +349,40 @@ function addEpisode(day, episodeData, serviceIndex, episodeIndex, episodeLang){
   episodes[day].push(new Episode(series, mID, seriesLink, seriesImage, stream, number, title, link, lang));
 }
 
-//TODO Create hover window, fetch data
 //Generate Summary from fetch jikan
-//Generate Cast from fetch imdb
-function getSummary(id){
-  let fullData = fetchCall("https://api.jikan.moe/v4/anime/" + id + "/full");
-  return fullData.data.synopsis;
+async function getSummary(id){
+  jikanVal = id;
+  if(jikanReady){
+    jikanReady = false;
+    let fullData = await fetchCall("https://api.jikan.moe/v4/anime/" + id + "/full");
+    let hoverSummaryEl = document.getElementById("hoverSummary");
+    hoverSummaryEl.textContent = fullData.data.synopsis;
+    jikanVal = '';
+    setTimeout(recallSummary, 1000);
+  }
 }
+//Timeout function in case too many requests made to jikan
+function recallSummary(){
+  jikanReady = true;
+  if(jikanVal != ''){
+    getSummary(jikanVal);
+  }
+}
+
+// Waifu generator API https://waifu.pics/docs
+async function getWaifu(){
+  let waifu = await fetchCall("https://api.waifu.pics/sfw/waifu");
+  return waifu.url;
+}
+async function displayWaifu(){
+  let waifuURL = await getWaifu();
+  let backdropImg = document.getElementById("backdrop")
+  backdropImg.src = waifuURL;
+}
+
+//Helper Function to run fetch request
 async function fetchCall(address){
   let response = await fetch(address);
   let data = await response.json();
   return data;
-}
-/* Waifu generator API https://waifu.pics/docs
-*/
-function getWaifu(){
-  let waifu = fetchCall("https://api.waifu.pics/sfw/waifu");
-  return waifu.url;
 }
