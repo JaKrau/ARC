@@ -5,40 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Release Calendar</title>
-    <link rel="stylesheet" href="./Assets/Styles/style.css"/>
-    <script
-    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="./Assets/Styles/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous"
-></script>
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <h1 id="title"></h1>
+    <header class="container">
+        <h1 id="title" class="title is-2">Anime Release Calendar</h1>
     </header>
-    <aside id="favoritesBar">
-        <h2>Favorites</h2>
-        <ul id="favList">
-            <!--- Java Script Enters Code Here-->
-        </ul>
-            <div class = "buttonContainer">
-                <button id="clearListButton" style="display: none;">Remove All Favorites</button>
+    <div id="displayArea" class="columns is-centered">
+        <aside id="favoritesBar" class="column is-one-fifth">
+            <!--- Java Script inserted code
+            <h2>Favorites</h2>
+            <article class="favorite" id="fav0"></article>
+            <article class="favorite" id="fav1"></article>
+            <article class="favorite" id="fav2"></article>
+            <article class="favorite" id="fav3"></article>
+            <button>Clear favorites</button>
+            ...
+            -->
+        </aside>
+        <main id="episodeList" class="column is-three-fifths columns">
+            <!-- Java Script inserted code
+            <h2>Calendar</h2>
+            <section class="day column" id="day-0"></section>
+            <section class="day column" id="day-1"></section>
+            <section class="day column" id="day-2"></section>
+            <section class="day column" id="day-3"></section>
+            ...
+            -->
+        </main>
+    </div>
+    <div id="hoverInfo" class="card">
+        <div class="card-image">
+            <figure class="image is-256x256">
+                <img id="hoverImage" src="" alt="Series Image">
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p id="hoverTitle" class="title is-6"></p>
+                </div>
             </div>
-
-    </aside>
-    <main id="episodeList">
-        <!-- Java Script inserted code
-        <h2>Calendar</h2>
-        <section class="day" id="day-0"></section>
-        <section class="day" id="day-1"></section>
-        <section class="day" id="day-2"></section>
-        <section class="day" id="day-3"></section>
-        -->
-    </main>
-
-    <!-- Holds data on anime streaming releases -->
-    <script type="text/javascript" src="./Assets/Data/AnimeInfo.js"></script>
+            <div id="hoverSummary" class="content"></div>
+        </div>
+    </div>
+    <div id="backgroundGradient"></div>
+    <div id="backgroundImage">
+        <img src="" id="backdrop" />
+    </div>
+    <script type="text/javascript" src="./Assets/Data/AnimeInfo.js"></script><!-- Holds data on anime streaming releases -->
     <script type="text/javascript" src="./Assets/Scripts/mainScript.js"></script>
 </body>
 </html>

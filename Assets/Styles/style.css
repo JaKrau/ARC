@@ -1,32 +1,62 @@
-.stylizedBracketBorder{
-    border-style: solid;
-    border-color: black;
-    border-radius: 8px;
-    border-top: 0;
-    border-bottom: 0;
-    padding: 2px;
-    max-width: fit-content;
-}
-.episode{
-    background-color: lightgrey;
-    padding: 2px;
-    margin: 4px;
-    display: block;
-}
-.episode h4, h5, p{
-    margin: 2px;
 
+/* Made a couple layers to help get a dynamic background image displayed as I wanted.*/
+*{
+    z-index: 3;
 }
-.episode a{
-    text-decoration: none;
-    color: black;
+body{
+    background-color: aliceblue;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
+#backgroundGradient{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(240, 248, 255, 0.25) 0%, aliceblue 100%);
+}
+#backgroundImage{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    opacity: 0.25;
+}
+#backdrop{
+    width: 100vi;
+}
+
+/* Scales the element to help alert the user they are hovering over it*/
+article{
+    transition: 100ms;
+}
+article:hover{
+    transform: scale(105%);
+}
+button{
+    transition: 100ms;
+}
+button:hover{
+    transform: scale(105%);
+}
+
+/* A details pane to display when the user hovers over an episode*/
+#hoverInfo{
+    display: none;
+    position: fixed;
+    left: 10%;
+    top: 16px;
+    width: 20%;
+}
+
+#title{
+    text-align: center;
+}
+/* A dashed line to help navigate */
 .day{
-    white-space: pre-line;
-    max-width: 15%;
-    background-color: darkgray;
-    padding: 2px;
-    margin: 4px;
-    display: inline-block;
-    vertical-align: top;
+    border: 1px;
+    margin: 2px;
+    margin-top: 16px;
+    border-style: dashed;
+    border-color: black;
 }
